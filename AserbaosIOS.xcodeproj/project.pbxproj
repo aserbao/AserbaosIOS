@@ -36,7 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2BA91BE825A47A8F002EE089 /* StoryboardUIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoryboardUIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BA91BE825A47A8F002EE089 /* AserbaosIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AserbaosIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA91BEB25A47A8F002EE089 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2BA91BEC25A47A8F002EE089 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2BA91BEE25A47A8F002EE089 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
@@ -48,10 +48,10 @@
 		2BA91BFA25A47A91002EE089 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2BA91BFC25A47A91002EE089 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BA91BFD25A47A91002EE089 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2BA91C0325A47A91002EE089 /* StoryboardUIDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StoryboardUIDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BA91C0325A47A91002EE089 /* AserbaosIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AserbaosIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA91C0725A47A91002EE089 /* StoryboardUIDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StoryboardUIDemoTests.m; sourceTree = "<group>"; };
 		2BA91C0925A47A91002EE089 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2BA91C0E25A47A91002EE089 /* StoryboardUIDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StoryboardUIDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BA91C0E25A47A91002EE089 /* AserbaosIOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AserbaosIOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA91C1225A47A91002EE089 /* StoryboardUIDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StoryboardUIDemoUITests.m; sourceTree = "<group>"; };
 		2BA91C1425A47A91002EE089 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,9 +94,9 @@
 		2BA91BE925A47A8F002EE089 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2BA91BE825A47A8F002EE089 /* StoryboardUIDemo.app */,
-				2BA91C0325A47A91002EE089 /* StoryboardUIDemoTests.xctest */,
-				2BA91C0E25A47A91002EE089 /* StoryboardUIDemoUITests.xctest */,
+				2BA91BE825A47A8F002EE089 /* AserbaosIOS.app */,
+				2BA91C0325A47A91002EE089 /* AserbaosIOSTests.xctest */,
+				2BA91C0E25A47A91002EE089 /* AserbaosIOSUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,9 +140,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2BA91BE725A47A8F002EE089 /* StoryboardUIDemo */ = {
+		2BA91BE725A47A8F002EE089 /* AserbaosIOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2BA91C1725A47A91002EE089 /* Build configuration list for PBXNativeTarget "StoryboardUIDemo" */;
+			buildConfigurationList = 2BA91C1725A47A91002EE089 /* Build configuration list for PBXNativeTarget "AserbaosIOS" */;
 			buildPhases = (
 				2BA91BE425A47A8F002EE089 /* Sources */,
 				2BA91BE525A47A8F002EE089 /* Frameworks */,
@@ -152,14 +152,14 @@
 			);
 			dependencies = (
 			);
-			name = StoryboardUIDemo;
+			name = AserbaosIOS;
 			productName = StoryboardUIDemo;
-			productReference = 2BA91BE825A47A8F002EE089 /* StoryboardUIDemo.app */;
+			productReference = 2BA91BE825A47A8F002EE089 /* AserbaosIOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2BA91C0225A47A91002EE089 /* StoryboardUIDemoTests */ = {
+		2BA91C0225A47A91002EE089 /* AserbaosIOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2BA91C1A25A47A91002EE089 /* Build configuration list for PBXNativeTarget "StoryboardUIDemoTests" */;
+			buildConfigurationList = 2BA91C1A25A47A91002EE089 /* Build configuration list for PBXNativeTarget "AserbaosIOSTests" */;
 			buildPhases = (
 				2BA91BFF25A47A91002EE089 /* Sources */,
 				2BA91C0025A47A91002EE089 /* Frameworks */,
@@ -170,14 +170,14 @@
 			dependencies = (
 				2BA91C0525A47A91002EE089 /* PBXTargetDependency */,
 			);
-			name = StoryboardUIDemoTests;
+			name = AserbaosIOSTests;
 			productName = StoryboardUIDemoTests;
-			productReference = 2BA91C0325A47A91002EE089 /* StoryboardUIDemoTests.xctest */;
+			productReference = 2BA91C0325A47A91002EE089 /* AserbaosIOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		2BA91C0D25A47A91002EE089 /* StoryboardUIDemoUITests */ = {
+		2BA91C0D25A47A91002EE089 /* AserbaosIOSUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2BA91C1D25A47A91002EE089 /* Build configuration list for PBXNativeTarget "StoryboardUIDemoUITests" */;
+			buildConfigurationList = 2BA91C1D25A47A91002EE089 /* Build configuration list for PBXNativeTarget "AserbaosIOSUITests" */;
 			buildPhases = (
 				2BA91C0A25A47A91002EE089 /* Sources */,
 				2BA91C0B25A47A91002EE089 /* Frameworks */,
@@ -188,9 +188,9 @@
 			dependencies = (
 				2BA91C1025A47A91002EE089 /* PBXTargetDependency */,
 			);
-			name = StoryboardUIDemoUITests;
+			name = AserbaosIOSUITests;
 			productName = StoryboardUIDemoUITests;
-			productReference = 2BA91C0E25A47A91002EE089 /* StoryboardUIDemoUITests.xctest */;
+			productReference = 2BA91C0E25A47A91002EE089 /* AserbaosIOSUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -214,7 +214,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2BA91BE325A47A8F002EE089 /* Build configuration list for PBXProject "StoryboardUIDemo" */;
+			buildConfigurationList = 2BA91BE325A47A8F002EE089 /* Build configuration list for PBXProject "AserbaosIOS" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -227,9 +227,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2BA91BE725A47A8F002EE089 /* StoryboardUIDemo */,
-				2BA91C0225A47A91002EE089 /* StoryboardUIDemoTests */,
-				2BA91C0D25A47A91002EE089 /* StoryboardUIDemoUITests */,
+				2BA91BE725A47A8F002EE089 /* AserbaosIOS */,
+				2BA91C0225A47A91002EE089 /* AserbaosIOSTests */,
+				2BA91C0D25A47A91002EE089 /* AserbaosIOSUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -294,12 +294,12 @@
 /* Begin PBXTargetDependency section */
 		2BA91C0525A47A91002EE089 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2BA91BE725A47A8F002EE089 /* StoryboardUIDemo */;
+			target = 2BA91BE725A47A8F002EE089 /* AserbaosIOS */;
 			targetProxy = 2BA91C0425A47A91002EE089 /* PBXContainerItemProxy */;
 		};
 		2BA91C1025A47A91002EE089 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2BA91BE725A47A8F002EE089 /* StoryboardUIDemo */;
+			target = 2BA91BE725A47A8F002EE089 /* AserbaosIOS */;
 			targetProxy = 2BA91C0F25A47A91002EE089 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -328,6 +328,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -387,6 +388,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -444,6 +446,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NK4C788QT7;
 				INFOPLIST_FILE = StoryboardUIDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -459,15 +462,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NK4C788QT7;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = StoryboardUIDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = aserbao.StoryboardUIDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -488,7 +494,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = aserbao.StoryboardUIDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StoryboardUIDemo.app/StoryboardUIDemo";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AserbaosIOS.app/AserbaosIOS";
 			};
 			name = Debug;
 		};
@@ -508,7 +514,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = aserbao.StoryboardUIDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StoryboardUIDemo.app/StoryboardUIDemo";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AserbaosIOS.app/AserbaosIOS";
 			};
 			name = Release;
 		};
@@ -551,7 +557,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2BA91BE325A47A8F002EE089 /* Build configuration list for PBXProject "StoryboardUIDemo" */ = {
+		2BA91BE325A47A8F002EE089 /* Build configuration list for PBXProject "AserbaosIOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2BA91C1525A47A91002EE089 /* Debug */,
@@ -560,7 +566,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2BA91C1725A47A91002EE089 /* Build configuration list for PBXNativeTarget "StoryboardUIDemo" */ = {
+		2BA91C1725A47A91002EE089 /* Build configuration list for PBXNativeTarget "AserbaosIOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2BA91C1825A47A91002EE089 /* Debug */,
@@ -569,7 +575,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2BA91C1A25A47A91002EE089 /* Build configuration list for PBXNativeTarget "StoryboardUIDemoTests" */ = {
+		2BA91C1A25A47A91002EE089 /* Build configuration list for PBXNativeTarget "AserbaosIOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2BA91C1B25A47A91002EE089 /* Debug */,
@@ -578,7 +584,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2BA91C1D25A47A91002EE089 /* Build configuration list for PBXNativeTarget "StoryboardUIDemoUITests" */ = {
+		2BA91C1D25A47A91002EE089 /* Build configuration list for PBXNativeTarget "AserbaosIOSUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2BA91C1E25A47A91002EE089 /* Debug */,
