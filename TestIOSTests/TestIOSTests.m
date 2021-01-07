@@ -1,17 +1,17 @@
 //
-//  StoryboardUIDemoTests.m
-//  StoryboardUIDemoTests
+//  TestIOSTests.m
+//  TestIOSTests
 //
-//  Created by aserbao on 2021/1/5.
+//  Created by aserbao on 2021/1/7.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface StoryboardUIDemoTests : XCTestCase
+@interface TestIOSTests : XCTestCase
 
 @end
 
-@implementation StoryboardUIDemoTests
+@implementation TestIOSTests
 
 - (void)setUp {
     // Put setup code here. This method is called before the invocation of each test method in the class.
