@@ -1,17 +1,17 @@
 //
-//  TestIOSTests.m
-//  TestIOSTests
+//  AserbaosIOSTests.m
+//  AserbaosIOSTests
 //
 //  Created by aserbao on 2021/1/7.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface TestIOSTests : XCTestCase
+@interface AserbaosIOSTests : XCTestCase
 
 @end
 
-@implementation TestIOSTests
+@implementation AserbaosIOSTests
 
 - (void)setUp {
     // Put setup code here. This method is called before the invocation of each test method in the class.
