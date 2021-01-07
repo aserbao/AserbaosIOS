@@ -32,5 +32,12 @@
     int result = n1 + n2;
     
     self.outResult.text = [NSString stringWithFormat:@"%d",result];
+    
+    //关闭软键盘的第一种方法
+//    [self.txtFirstNum resignFirstResponder];
+//    [self.txtSecondNum resignFirstResponder];
+    
+    //第二种做法
+    [self.view endEditing:YES];
 }
 @end
