@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtFirstNum;
 @property (weak, nonatomic) IBOutlet UITextField *txtSecondNum;
 @property (weak, nonatomic) IBOutlet UITextField *outResult;
+@property (weak, nonatomic) IBOutlet UIButton *calcView;
 
 @end
 
@@ -20,6 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self dynamicAddView];
 }
 
 //计算按钮执行这个方法
@@ -39,5 +42,55 @@
     
     //第二种做法
     [self.view endEditing:YES];
+    
+    [self move];
 }
+
+/**
+ * View 大小和位置
+ * change the view’s location and size
+ */
+- (void) move{
+    // change the view’s location and size
+    CGRect originFrame =  self.calcView.frame;
+//    CGPoint originCeneter =  self.outResult.center;
+//    CGRect originBounds =  self.outResult.bounds;
+//    CGAffineTransform originTransform =  self.outResult.transform;
+    
+//    originFrame.origin.x += 10;
+    originFrame.origin.y += 10;
+    
+    // 动画实现方式一： 头尾式执行动画 流程， 开启动画 --> 设置时间 --> 提交动画
+    /**[UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.5];
+    self.calcView.frame = originFrame;
+    [UIView commitAnimations];*/
+    
+    
+    // block的方式执行
+    [UIView animateWithDuration:0.5 animations:^{
+        self.calcView.frame = originFrame;
+    }];
+}
+
+
+// 动态添加视图
+- (void) dynamicAddView{
+
+    // 创建系统按钮
+//    UIButton *buttonSystem = [UIButton buttonWithType:UIButtonTypeSystem];
+    // 创建空白按钮
+    UIButton *button = [[UIButton alloc] init];
+    [button setTitle:@"点击一下" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [button setTitle:@"被按下了" forState:UIControlStateHighlighted];
+    [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    // 大小
+    button.frame = CGRectMake(50, 100, 100, 100);
+    // 添加点击事件
+    [button addTarget:self action:@selector(move) forControlEvents:UIControlEventTouchUpInside];
+    // 添加到UIVieW上
+    [self.view addSubview:button];
+}
+
 @end

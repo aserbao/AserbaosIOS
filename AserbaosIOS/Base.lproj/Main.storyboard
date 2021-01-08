@@ -68,6 +68,7 @@
                         <color key="backgroundColor" systemColor="systemPinkColor"/>
                     </view>
                     <connections>
+                        <outlet property="calcView" destination="POB-U9-ojZ" id="1h0-Xk-iKh"/>
                         <outlet property="outResult" destination="8a7-a9-uhv" id="fXp-Gx-NVs"/>
                         <outlet property="txtFirstNum" destination="q5f-WY-StM" id="Sm1-Xf-lhe"/>
                         <outlet property="txtSecondNum" destination="GKZ-HN-gmh" id="1Hx-bq-5AX"/>
