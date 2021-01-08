@@ -89,6 +89,19 @@
                                     <action selector="useTransform:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0AD-tk-HGt"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" tag="11" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CwO-jR-xKY">
+                                <rect key="frame" x="156" y="512" width="100" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="缩放">
+                                    <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="calc" destination="BYZ-38-t0r" eventType="touchUpInside" id="VKl-rq-fr0"/>
+                                    <action selector="useTransform:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gh0-9L-Ijv"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" tag="13" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6I-TE-zvB">
                                 <rect key="frame" x="21" y="569" width="380" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -102,17 +115,16 @@
                                     <action selector="useTransform:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fCu-V8-z4a"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="11" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CwO-jR-xKY">
-                                <rect key="frame" x="156" y="512" width="100" height="33"/>
+                            <button opaque="NO" tag="11" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJJ-hV-WwA">
+                                <rect key="frame" x="21" y="610" width="100" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <state key="normal" title="缩放">
+                                <state key="normal" title="useDiction">
                                     <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="calc" destination="BYZ-38-t0r" eventType="touchUpInside" id="VKl-rq-fr0"/>
-                                    <action selector="useTransform:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gh0-9L-Ijv"/>
+                                    <action selector="useDictionary" destination="BYZ-38-t0r" eventType="touchUpInside" id="HlA-hM-NN8"/>
                                 </connections>
                             </button>
                         </subviews>

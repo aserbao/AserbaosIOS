@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *outResult;
 @property (weak, nonatomic) IBOutlet UIButton *calcView;
 - (IBAction)useTransform:(UIButton *)sender;
+- (IBAction)useDictionary;
 
 @end
 
@@ -92,6 +93,8 @@
     [button addTarget:self action:@selector(move) forControlEvents:UIControlEventTouchUpInside];
     // 添加到UIVieW上
     [self.view addSubview:button];
+    //移除View
+//    [self.view.superview removeFromSuperview:button];
 }
 
 //Transform的使用
@@ -114,5 +117,15 @@
             }];
             break;
     }
+}
+
+//使用字典
+-(void)useDictionary{
+    NSDictionary *dict = @{@"name":@"aserbao",@"age":@18,@"height":@180};
+    NSDictionary *dict1 = @{@"name":@"aserbao1",@"age":@19,@"height":@180};
+    NSDictionary *dict2 = @{@"name":@"aserbao2",@"age":@20,@"height":@180};
+    
+    NSArray *students = @[dict,dict1,dict2];
+    NSLog(@"%@",students);
 }
 @end
