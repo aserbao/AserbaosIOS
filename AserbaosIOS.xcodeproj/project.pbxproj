@@ -104,7 +104,9 @@
 		2B99EC9025A73AAA00951772 /* AserbaosIOS */ = {
 			isa = PBXGroup;
 			children = (
+				2B99ECD925A8139800951772 /* Support Files */,
 				2B99EC9125A73AAA00951772 /* AppDelegate.h */,
+				2B99ECA325A73AAC00951772 /* main.m */,
 				2B99EC9225A73AAA00951772 /* AppDelegate.m */,
 				2B99EC9425A73AAA00951772 /* SceneDelegate.h */,
 				2B99EC9525A73AAA00951772 /* SceneDelegate.m */,
@@ -113,8 +115,6 @@
 				2B99EC9A25A73AAA00951772 /* Main.storyboard */,
 				2B99EC9D25A73AAC00951772 /* Assets.xcassets */,
 				2B99EC9F25A73AAC00951772 /* LaunchScreen.storyboard */,
-				2B99ECA225A73AAC00951772 /* Info.plist */,
-				2B99ECA325A73AAC00951772 /* main.m */,
 			);
 			path = AserbaosIOS;
 			sourceTree = "<group>";
@@ -135,6 +135,14 @@
 				2B99ECBA25A73AAC00951772 /* Info.plist */,
 			);
 			path = AserbaosIOSUITests;
+			sourceTree = "<group>";
+		};
+		2B99ECD925A8139800951772 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2B99ECA225A73AAC00951772 /* Info.plist */,
+			);
+			path = "Support Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -444,7 +452,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NK4C788QT7;
-				INFOPLIST_FILE = AserbaosIOS/Info.plist;
+				INFOPLIST_FILE = "AserbaosIOS/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -462,7 +470,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NK4C788QT7;
-				INFOPLIST_FILE = AserbaosIOS/Info.plist;
+				INFOPLIST_FILE = "AserbaosIOS/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
