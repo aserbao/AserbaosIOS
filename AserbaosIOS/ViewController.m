@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtSecondNum;
 @property (weak, nonatomic) IBOutlet UITextField *outResult;
 @property (weak, nonatomic) IBOutlet UIButton *calcView;
+- (IBAction)useTransform:(UIButton *)sender;
 
 @end
 
@@ -93,4 +94,25 @@
     [self.view addSubview:button];
 }
 
+//Transform的使用
+- (IBAction)useTransform:(UIButton *)sender {
+//    self.calcView.transform = CGAffineTransformMakeTranslation(0, -10);
+    switch (sender.tag) {
+        case 10:
+            self.calcView.transform = CGAffineTransformTranslate(self.calcView.transform,0, 10);
+            break;
+        case 11:
+            self.calcView.transform = CGAffineTransformScale(self.calcView.transform,1.5,1.5);
+            break;
+        case 12:
+            self.calcView.transform = CGAffineTransformRotate(self.calcView.transform,45);
+            break;
+        default:
+            [UIView animateWithDuration:2.5 animations:^{
+                // 恢复原状态
+                self.calcView.transform = CGAffineTransformIdentity;
+            }];
+            break;
+    }
+}
 @end
