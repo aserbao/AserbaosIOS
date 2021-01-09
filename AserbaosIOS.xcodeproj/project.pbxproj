@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B76E7CC25A8653D001A1E5C /* ASStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B76E7CB25A8653D001A1E5C /* ASStudent.m */; };
+		2B76E7D125A86A5A001A1E5C /* ASStudent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B76E7D025A86A5A001A1E5C /* ASStudent.xib */; };
+		2B76E7E325A86EE6001A1E5C /* ASStudentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B76E7E225A86EE6001A1E5C /* ASStudentView.m */; };
 		2B99EC9325A73AAA00951772 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B99EC9225A73AAA00951772 /* AppDelegate.m */; };
 		2B99EC9625A73AAA00951772 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B99EC9525A73AAA00951772 /* SceneDelegate.m */; };
 		2B99EC9925A73AAA00951772 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B99EC9825A73AAA00951772 /* ViewController.m */; };
@@ -16,6 +19,8 @@
 		2B99ECA425A73AAC00951772 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B99ECA325A73AAC00951772 /* main.m */; };
 		2B99ECAE25A73AAC00951772 /* AserbaosIOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B99ECAD25A73AAC00951772 /* AserbaosIOSTests.m */; };
 		2B99ECB925A73AAC00951772 /* AserbaosIOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B99ECB825A73AAC00951772 /* AserbaosIOSUITests.m */; };
+		2B99ECFC25A8344400951772 /* Students.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2B99ECFB25A8344400951772 /* Students.plist */; };
+		2B99ED1725A8440900951772 /* ASTomcatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B99ED1625A8440900951772 /* ASTomcatViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +41,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B76E7CA25A8653D001A1E5C /* ASStudent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASStudent.h; sourceTree = "<group>"; };
+		2B76E7CB25A8653D001A1E5C /* ASStudent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASStudent.m; sourceTree = "<group>"; };
+		2B76E7D025A86A5A001A1E5C /* ASStudent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ASStudent.xib; sourceTree = "<group>"; };
+		2B76E7E125A86EE6001A1E5C /* ASStudentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASStudentView.h; sourceTree = "<group>"; };
+		2B76E7E225A86EE6001A1E5C /* ASStudentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASStudentView.m; sourceTree = "<group>"; };
 		2B99EC8E25A73AAA00951772 /* AserbaosIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AserbaosIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B99EC9125A73AAA00951772 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2B99EC9225A73AAA00951772 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -54,6 +64,9 @@
 		2B99ECB425A73AAC00951772 /* AserbaosIOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AserbaosIOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B99ECB825A73AAC00951772 /* AserbaosIOSUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AserbaosIOSUITests.m; sourceTree = "<group>"; };
 		2B99ECBA25A73AAC00951772 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B99ECFB25A8344400951772 /* Students.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Students.plist; sourceTree = "<group>"; };
+		2B99ED1625A8440900951772 /* ASTomcatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASTomcatViewController.m; sourceTree = "<group>"; };
+		2B99ED1F25A8445000951772 /* ASTomcatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASTomcatViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +94,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B76E7E725A99BF4001A1E5C /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				2B99EC9425A73AAA00951772 /* SceneDelegate.h */,
+				2B99EC9525A73AAA00951772 /* SceneDelegate.m */,
+				2B99EC9125A73AAA00951772 /* AppDelegate.h */,
+				2B99ECA325A73AAC00951772 /* main.m */,
+				2B99EC9225A73AAA00951772 /* AppDelegate.m */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		2B76E7E925A99C04001A1E5C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2B99EC9A25A73AAA00951772 /* Main.storyboard */,
+				2B99EC9F25A73AAC00951772 /* LaunchScreen.storyboard */,
+				2B76E7D025A86A5A001A1E5C /* ASStudent.xib */,
+				2B76E7E125A86EE6001A1E5C /* ASStudentView.h */,
+				2B76E7E225A86EE6001A1E5C /* ASStudentView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2B76E7EA25A99C0A001A1E5C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2B76E7CA25A8653D001A1E5C /* ASStudent.h */,
+				2B76E7CB25A8653D001A1E5C /* ASStudent.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2B76E7EB25A99C13001A1E5C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2B99EC9725A73AAA00951772 /* ViewController.h */,
+				2B99ED1625A8440900951772 /* ASTomcatViewController.m */,
+				2B99ED1F25A8445000951772 /* ASTomcatViewController.h */,
+				2B99EC9825A73AAA00951772 /* ViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		2B99EC8525A73AAA00951772 = {
 			isa = PBXGroup;
 			children = (
@@ -104,17 +161,11 @@
 		2B99EC9025A73AAA00951772 /* AserbaosIOS */ = {
 			isa = PBXGroup;
 			children = (
+				2B76E7EB25A99C13001A1E5C /* Controllers */,
+				2B76E7EA25A99C0A001A1E5C /* Models */,
+				2B76E7E925A99C04001A1E5C /* Views */,
+				2B76E7E725A99BF4001A1E5C /* Others */,
 				2B99ECD925A8139800951772 /* Support Files */,
-				2B99EC9125A73AAA00951772 /* AppDelegate.h */,
-				2B99ECA325A73AAC00951772 /* main.m */,
-				2B99EC9225A73AAA00951772 /* AppDelegate.m */,
-				2B99EC9425A73AAA00951772 /* SceneDelegate.h */,
-				2B99EC9525A73AAA00951772 /* SceneDelegate.m */,
-				2B99EC9725A73AAA00951772 /* ViewController.h */,
-				2B99EC9825A73AAA00951772 /* ViewController.m */,
-				2B99EC9A25A73AAA00951772 /* Main.storyboard */,
-				2B99EC9D25A73AAC00951772 /* Assets.xcassets */,
-				2B99EC9F25A73AAC00951772 /* LaunchScreen.storyboard */,
 			);
 			path = AserbaosIOS;
 			sourceTree = "<group>";
@@ -140,7 +191,9 @@
 		2B99ECD925A8139800951772 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				2B99EC9D25A73AAC00951772 /* Assets.xcassets */,
 				2B99ECA225A73AAC00951772 /* Info.plist */,
+				2B99ECFB25A8344400951772 /* Students.plist */,
 			);
 			path = "Support Files";
 			sourceTree = "<group>";
@@ -250,6 +303,8 @@
 			files = (
 				2B99ECA125A73AAC00951772 /* LaunchScreen.storyboard in Resources */,
 				2B99EC9E25A73AAC00951772 /* Assets.xcassets in Resources */,
+				2B76E7D125A86A5A001A1E5C /* ASStudent.xib in Resources */,
+				2B99ECFC25A8344400951772 /* Students.plist in Resources */,
 				2B99EC9C25A73AAA00951772 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,7 +332,10 @@
 			files = (
 				2B99EC9925A73AAA00951772 /* ViewController.m in Sources */,
 				2B99EC9325A73AAA00951772 /* AppDelegate.m in Sources */,
+				2B76E7E325A86EE6001A1E5C /* ASStudentView.m in Sources */,
 				2B99ECA425A73AAC00951772 /* main.m in Sources */,
+				2B76E7CC25A8653D001A1E5C /* ASStudent.m in Sources */,
+				2B99ED1725A8440900951772 /* ASTomcatViewController.m in Sources */,
 				2B99EC9625A73AAA00951772 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
