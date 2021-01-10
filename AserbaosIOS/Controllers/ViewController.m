@@ -257,8 +257,18 @@
     self.scrollView.contentOffset = CGPointMake(0, 50);
     // 设置上下左右的距离
     self.scrollView.contentInset = UIEdgeInsetsMake(50, 10, 0, 0);
-    
+
+    // 最小可缩放倍数为0.35,最大可以放大2.0;
+    self.scrollView.minimumZoomScale = 0.35;
+    self.scrollView.maximumZoomScale = 2.0;
+
+    // 设置当前scrollView的代理为当前控制器;
     self.scrollView.delegate = self;
+    
+    // ScrollView实现自动分页，ScrollView的宽度&高度来检测分页
+//    self.scrollView.pagingEnabled = YES;
+    
+
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
@@ -272,5 +282,9 @@
     NSLog(@"停止拖拽……");
 }
 
+/// 设置缩放视图
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
+    return self.scrollImageView;
+}
 
 @end
