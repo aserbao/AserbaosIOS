@@ -8,6 +8,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ASTomcatViewController : UINavigationController
-
+@property (nonatomic,copy) NSString *testEditorSnippets;
 
 @end

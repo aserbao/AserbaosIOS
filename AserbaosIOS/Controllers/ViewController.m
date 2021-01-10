@@ -16,6 +16,11 @@
 - (IBAction)useTransform:(UIButton *)sender;
 - (IBAction)useDictionary;
 - (IBAction)showLabel:(UIButton *)sender;
+- (IBAction)someBasics;
+- (IBAction)showAlert:(id)sender;
+- (IBAction)useTimer;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIImageView *scrollImageView;
 
 @end
 
@@ -26,6 +31,7 @@
     // Do any additional setup after loading the view.
     
     [self dynamicAddView];
+    self.scrollView.contentSize = self.scrollImageView.frame.size;
 }
 
 //计算按钮执行这个方法
@@ -170,9 +176,74 @@
         }
     }];
     
-
+    // 让subviews这个数组中的每一个函数都调用一下removeFromSuperView这个方法。
+//    [self.calcView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
     [self.view addSubview:label];
+}
+
+/// 修改状态栏的文字颜色为白色
+- (UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleDarkContent;
+}
+/// 隐藏状态栏
+- (BOOL)prefersStatusBarHidden{
+    return YES;
+}
+
+///显示日志
+- (void) showLog:(NSString *) input{
+    NSLog(@"printStr %@",input);
+}
+
+
+///一些基础的用法
+- (void) someBasics{
+    
+    /// 第一种方式：直接调用
+    [self showLog:@"调用方法的第一种方式"];
+    /// 第二种方式： 通过performSelector调用
+    [self performSelector:@selector(showLog:) withObject:@"调用方法的第二种方式"];
+    [self performSelector:@selector(showLog:) withObject:@"延时1s调用showLong方法" afterDelay:1];
+    
+    /// 第三种方式：通过获取方法签名调用
+    NSMethodSignature *signOfShowLog = [self methodSignatureForSelector:@selector(showLog:)];
+    //获取方法签名对应的invocation
+    NSInvocation *invocationOfShowLog = [NSInvocation invocationWithMethodSignature:signOfShowLog];
+    /**
+     设置消息接受者，与[invocationOfShowLog setArgument:(__bridge void * _Nonnull)(self) atIndex:0]等价
+     */
+    [invocationOfShowLog setTarget:self];
+    /**设置要执行的selector。与[invocationOfShowLog setArgument:@selector(printStr1:) atIndex:1] 等价*/
+    [invocationOfShowLog setSelector:@selector(showLog:)];
+    //设置参数
+    NSString *str = @"通过获取方法签名的方式调用方法";
+    [invocationOfShowLog setArgument:&str atIndex:2];
+    //开始执行
+    [invocationOfShowLog invoke];
+}
+/// 显示弹框
+- (IBAction)showAlert:(id)sender {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"这是一个弹框" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *sureAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"你点了确定键");
+    }];
+    [alertController addAction:sureAction];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"你点了取消键");
+    }];
+    [alertController addAction:cancelAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+    
+    
+    
+}
+///使用计时器
+- (IBAction)useTimer {
+//    [NSTimer scheduledTimerWithTimeInterval:1.0 repeats:YES block:<#^(NSTimer * _Nonnull timer)block#>]
+//    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector([self showLog:@"useTimer"]) userInfo:nil repeats:YES];
 }
 
 
