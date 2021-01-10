@@ -7,7 +7,7 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController ()<UIScrollViewDelegate>
 - (IBAction)calc;
 @property (weak, nonatomic) IBOutlet UITextField *txtFirstNum;
 @property (weak, nonatomic) IBOutlet UITextField *txtSecondNum;
@@ -31,7 +31,7 @@
     // Do any additional setup after loading the view.
     
     [self dynamicAddView];
-    self.scrollView.contentSize = self.scrollImageView.frame.size;
+    [self useUIScrollView];
 }
 
 //计算按钮执行这个方法
@@ -246,6 +246,31 @@
 //    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector([self showLog:@"useTimer"]) userInfo:nil repeats:YES];
 }
 
+
+- (void) useUIScrollView{
+    self.scrollView.contentSize = self.scrollImageView.frame.size;
+    // 水平方向进度条隐藏
+    self.scrollView.showsVerticalScrollIndicator = NO;
+    // 竖直方向进度条隐藏
+    self.scrollView.showsHorizontalScrollIndicator = NO;
+    // 默认距离上面移动50
+    self.scrollView.contentOffset = CGPointMake(0, 50);
+    // 设置上下左右的距离
+    self.scrollView.contentInset = UIEdgeInsetsMake(50, 10, 0, 0);
+    
+    self.scrollView.delegate = self;
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    NSString *pointStr = NSStringFromCGPoint(scrollView.contentOffset);
+    NSLog(@"正在滚动中…… %@",pointStr);
+}
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    NSLog(@"开始拖拽……");
+}
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+    NSLog(@"停止拖拽……");
+}
 
 
 @end

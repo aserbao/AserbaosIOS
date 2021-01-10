@@ -225,6 +225,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
+                                <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                 <viewLayoutGuide key="contentLayoutGuide" id="kAX-Wh-uhV"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="xzh-dB-nuh"/>
                             </scrollView>
