@@ -7,6 +7,8 @@
 
 #import "ASCameraPreview.h"
 #import <AVFoundation/AVFoundation.h>
+@interface ASCameraPreview()<AVCapturePhotoCaptureDelegate>
+@end
 
 @implementation ASCameraPreview{
     TakePhotoSuccess _takePhotoSuccess;
@@ -21,9 +23,26 @@
             [self initCameraWithPosition:AVCaptureDevicePositionFront];
         }
     }
+    [self addSomeView];
     return self;
 }
 
+//添加一些布局
+- (void)addSomeView{
+    // 添加拍照按钮
+    CGRect frame = [UIScreen mainScreen].bounds;
+    UIButton *takeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    takeButton.frame = CGRectMake((frame.size.width - 70)/2, frame.size.height - 100, 70, 70);
+    takeButton.layer.masksToBounds = YES;
+    takeButton.layer.cornerRadius = takeButton.frame.size.height/2;
+    takeButton.backgroundColor = [UIColor colorWithWhite:1 alpha:0.7];
+    [takeButton setTitle:@"拍照" forState:UIControlStateNormal];
+    takeButton.titleLabel.font = [UIFont systemFontOfSize:16];
+    takeButton.titleLabel.numberOfLines = 0;
+    [takeButton setTitleColor:[UIColor colorWithRed:40.2f/255 green:180.2f/255 blue:247.2f/255 alpha:0.9] forState:UIControlStateNormal];
+    [takeButton addTarget:self action:@selector(takePhoto) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:takeButton];
+}
 
 AVCaptureSession *session;
 AVCaptureDevice *_device;
@@ -71,7 +90,7 @@ AVCapturePhotoSettings *_outputSettings;
     [self.layer insertSublayer:previewLayout atIndex:0];
     
     
-    //step5: session start running 
+    //step5: session start running
     [session startRunning];
 }
 
@@ -81,5 +100,32 @@ AVCapturePhotoSettings *_outputSettings;
 - (void)stopRunning{
     [session stopRunning];
 }
+// ----------------------- AVCapturePhotoCaptureDelegate 方法实现----------------------
+/// 代理类方法实现
+- (void)captureOutput:(AVCapturePhotoOutput *)output didFinishProcessingPhotoSampleBuffer:(CMSampleBufferRef)photoSampleBuffer previewPhotoSampleBuffer:(CMSampleBufferRef)previewPhotoSampleBuffer resolvedSettings:(AVCaptureResolvedPhotoSettings *)resolvedSettings bracketSettings:(AVCaptureBracketedStillImageSettings *)bracketSettings error:(NSError *)error{
+    
+    NSData *data = [AVCapturePhotoOutput JPEGPhotoDataRepresentationForJPEGSampleBuffer:photoSampleBuffer previewPhotoSampleBuffer:previewPhotoSampleBuffer];
+    UIImage *image = [UIImage imageWithData:data];
+    
+    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+}
+
+- (void)image: (UIImage *) image didFinishSavingWithError: (NSError *) error contextInfo: (void *) contextInfo {
+    NSString *msg = nil ;
+    if(error != NULL){
+        msg = @"保存图片失败" ;
+    }else{
+        msg = @"保存图片成功" ;
+    }
+    NSLog(@"+++++++++++%@", msg);
+}
+/// 拍照方法，设置代理
+-(void) takePhoto{
+    NSDictionary *setDic = @{AVVideoCodecKey:AVVideoCodecTypeJPEG};
+    AVCapturePhotoSettings *outputSettings = [AVCapturePhotoSettings photoSettingsWithFormat:setDic];
+    [capturePhotoOutput capturePhotoWithSettings:outputSettings delegate:self];
+}
+
+
 
 @end
