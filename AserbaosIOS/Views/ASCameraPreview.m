@@ -77,10 +77,14 @@ AVCapturePhotoSettings *_outputSettings;
     }
    
     // should create PhotoOutput if you want capture picture
+    // 创建AVCapturePhotoOutput的输出
     capturePhotoOutput = [[AVCapturePhotoOutput alloc] init];
+    // 设置输出图片格式
     NSDictionary *setDic = @{AVVideoCodecKey:AVVideoCodecTypeJPEG};
     _outputSettings = [AVCapturePhotoSettings photoSettingsWithFormat:setDic];
+    // 一些配置信息
     [capturePhotoOutput setPhotoSettingsForSceneMonitoring:_outputSettings];
+    // 添加到Session中
     [session addOutput:capturePhotoOutput];
     
     // step4: create a previewLayout
@@ -101,12 +105,16 @@ AVCapturePhotoSettings *_outputSettings;
     [session stopRunning];
 }
 // ----------------------- AVCapturePhotoCaptureDelegate 方法实现----------------------
-/// 代理类方法实现
-- (void)captureOutput:(AVCapturePhotoOutput *)output didFinishProcessingPhotoSampleBuffer:(CMSampleBufferRef)photoSampleBuffer previewPhotoSampleBuffer:(CMSampleBufferRef)previewPhotoSampleBuffer resolvedSettings:(AVCaptureResolvedPhotoSettings *)resolvedSettings bracketSettings:(AVCaptureBracketedStillImageSettings *)bracketSettings error:(NSError *)error{
-    
-    NSData *data = [AVCapturePhotoOutput JPEGPhotoDataRepresentationForJPEGSampleBuffer:photoSampleBuffer previewPhotoSampleBuffer:previewPhotoSampleBuffer];
+/// iOS 11.0以前的实现方案：
+//- (void)captureOutput:(AVCapturePhotoOutput *)output didFinishProcessingPhotoSampleBuffer:(CMSampleBufferRef)photoSampleBuffer previewPhotoSampleBuffer:(CMSampleBufferRef)previewPhotoSampleBuffer resolvedSettings:(AVCaptureResolvedPhotoSettings *)resolvedSettings bracketSettings:(AVCaptureBracketedStillImageSettings *)bracketSettings error:(NSError *)error{
+//    NSData *data = [AVCapturePhotoOutput JPEGPhotoDataRepresentationForJPEGSampleBuffer:photoSampleBuffer previewPhotoSampleBuffer:previewPhotoSampleBuffer];
+//    UIImage *image = [UIImage imageWithData:data];
+//    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+//}
+/// 代理协议方法的实现
+- (void)captureOutput:(AVCapturePhotoOutput *)output didFinishProcessingPhoto:(AVCapturePhoto *)photo error:(NSError *)error{
+    NSData *data = photo.fileDataRepresentation;
     UIImage *image = [UIImage imageWithData:data];
-    
     UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
 }
 
@@ -121,8 +129,11 @@ AVCapturePhotoSettings *_outputSettings;
 }
 /// 拍照方法，设置代理
 -(void) takePhoto{
+    //创建图片输出格式
     NSDictionary *setDic = @{AVVideoCodecKey:AVVideoCodecTypeJPEG};
+    //配置格式
     AVCapturePhotoSettings *outputSettings = [AVCapturePhotoSettings photoSettingsWithFormat:setDic];
+    //配置输出代理
     [capturePhotoOutput capturePhotoWithSettings:outputSettings delegate:self];
 }
 
