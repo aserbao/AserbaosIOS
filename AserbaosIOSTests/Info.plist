@@ -18,5 +18,11 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>访问麦克风</string>
+	<key>NSCameraUsageDescription</key>
+	<string>访问相机</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>访问相册</string>
 </dict>
 </plist>

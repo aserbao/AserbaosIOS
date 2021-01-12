@@ -7,7 +7,8 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()<UIScrollViewDelegate>
+
+@interface ViewController ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 - (IBAction)calc;
 @property (weak, nonatomic) IBOutlet UITextField *txtFirstNum;
 @property (weak, nonatomic) IBOutlet UITextField *txtSecondNum;
@@ -21,7 +22,11 @@
 - (IBAction)useTimer;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *scrollImageView;
+@property (weak, nonatomic) IBOutlet UITableView *leftTableView;
+- (IBAction)testFunc;
 
+
+@property (nonatomic, strong) NSTimer *timer;
 @end
 
 @implementation ViewController
@@ -32,6 +37,7 @@
     
     [self dynamicAddView];
     [self useUIScrollView];
+    
 }
 
 //计算按钮执行这个方法
@@ -242,8 +248,8 @@
 }
 ///使用计时器
 - (IBAction)useTimer {
-//    [NSTimer scheduledTimerWithTimeInterval:1.0 repeats:YES block:<#^(NSTimer * _Nonnull timer)block#>]
-//    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector([self showLog:@"useTimer"]) userInfo:nil repeats:YES];
+    //    NSTimer:时间间隔比较大，1s，几秒……
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(showLog:) userInfo:nil repeats:YES];
 }
 
 
@@ -267,8 +273,6 @@
     
     // ScrollView实现自动分页，ScrollView的宽度&高度来检测分页
 //    self.scrollView.pagingEnabled = YES;
-    
-
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
@@ -281,10 +285,29 @@
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
     NSLog(@"停止拖拽……");
 }
-
 /// 设置缩放视图
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
     return self.scrollImageView;
 }
+
+
+
+- (void)viewDidAppear:(BOOL)animated{
+    [self.timer invalidate];
+}
+
+/// 使用UITableView
+- (void) useUITableView{
+    self.leftTableView.delegate = self;
+}
+
+/// 测试
+- (IBAction)testFunc {
+    ASPerson *person = [[ASPerson alloc] init];
+    [person inputName:@"aserbao"];
+    [person inputAge:18];
+    NSLog(@"%@",person.info);
+}
+
 
 @end

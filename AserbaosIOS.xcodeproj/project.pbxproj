@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B49C5D525AD53A300AC8493 /* ASPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B49C5D425AD53A300AC8493 /* ASPerson.m */; };
+		2B49C5DE25AD8F2100AC8493 /* ASCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B49C5DD25AD8F2100AC8493 /* ASCameraViewController.m */; };
+		2B49C5E425AD8F8C00AC8493 /* ASCameraPreview.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B49C5E325AD8F8C00AC8493 /* ASCameraPreview.m */; };
 		2B76E7CC25A8653D001A1E5C /* ASStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B76E7CB25A8653D001A1E5C /* ASStudent.m */; };
 		2B76E7D125A86A5A001A1E5C /* ASStudent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B76E7D025A86A5A001A1E5C /* ASStudent.xib */; };
 		2B76E7E325A86EE6001A1E5C /* ASStudentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B76E7E225A86EE6001A1E5C /* ASStudentView.m */; };
@@ -41,6 +44,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B49C5D325AD53A300AC8493 /* ASPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASPerson.h; sourceTree = "<group>"; };
+		2B49C5D425AD53A300AC8493 /* ASPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASPerson.m; sourceTree = "<group>"; };
+		2B49C5DC25AD8F2100AC8493 /* ASCameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASCameraViewController.h; sourceTree = "<group>"; };
+		2B49C5DD25AD8F2100AC8493 /* ASCameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASCameraViewController.m; sourceTree = "<group>"; };
+		2B49C5E225AD8F8C00AC8493 /* ASCameraPreview.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASCameraPreview.h; sourceTree = "<group>"; };
+		2B49C5E325AD8F8C00AC8493 /* ASCameraPreview.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASCameraPreview.m; sourceTree = "<group>"; };
 		2B76E7CA25A8653D001A1E5C /* ASStudent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASStudent.h; sourceTree = "<group>"; };
 		2B76E7CB25A8653D001A1E5C /* ASStudent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASStudent.m; sourceTree = "<group>"; };
 		2B76E7D025A86A5A001A1E5C /* ASStudent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ASStudent.xib; sourceTree = "<group>"; };
@@ -114,6 +123,8 @@
 				2B76E7D025A86A5A001A1E5C /* ASStudent.xib */,
 				2B76E7E125A86EE6001A1E5C /* ASStudentView.h */,
 				2B76E7E225A86EE6001A1E5C /* ASStudentView.m */,
+				2B49C5E225AD8F8C00AC8493 /* ASCameraPreview.h */,
+				2B49C5E325AD8F8C00AC8493 /* ASCameraPreview.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -123,6 +134,8 @@
 			children = (
 				2B76E7CA25A8653D001A1E5C /* ASStudent.h */,
 				2B76E7CB25A8653D001A1E5C /* ASStudent.m */,
+				2B49C5D325AD53A300AC8493 /* ASPerson.h */,
+				2B49C5D425AD53A300AC8493 /* ASPerson.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -134,6 +147,8 @@
 				2B99ED1625A8440900951772 /* ASTomcatViewController.m */,
 				2B99ED1F25A8445000951772 /* ASTomcatViewController.h */,
 				2B99EC9825A73AAA00951772 /* ViewController.m */,
+				2B49C5DC25AD8F2100AC8493 /* ASCameraViewController.h */,
+				2B49C5DD25AD8F2100AC8493 /* ASCameraViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -330,11 +345,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B49C5D525AD53A300AC8493 /* ASPerson.m in Sources */,
 				2B99EC9925A73AAA00951772 /* ViewController.m in Sources */,
 				2B99EC9325A73AAA00951772 /* AppDelegate.m in Sources */,
+				2B49C5DE25AD8F2100AC8493 /* ASCameraViewController.m in Sources */,
 				2B76E7E325A86EE6001A1E5C /* ASStudentView.m in Sources */,
 				2B99ECA425A73AAC00951772 /* main.m in Sources */,
 				2B76E7CC25A8653D001A1E5C /* ASStudent.m in Sources */,
+				2B49C5E425AD8F8C00AC8493 /* ASCameraPreview.m in Sources */,
 				2B99ED1725A8440900951772 /* ASTomcatViewController.m in Sources */,
 				2B99EC9625A73AAA00951772 /* SceneDelegate.m in Sources */,
 			);
@@ -515,6 +533,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = aserbao.StoryboardUIDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -533,6 +552,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = aserbao.StoryboardUIDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
