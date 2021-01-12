@@ -10,7 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 typedef void(^TakePhotoSuccess)(void);
 
-@interface ASCameraPreview : UIView
+@interface ASCameraCapture : UIView
 ///初始化
 - (instancetype)initWithFrame:(CGRect)frame withPositionDevice:(BOOL)isBack withTakePhotoSuccess:(TakePhotoSuccess)takePhotoSuccess;
 @end
