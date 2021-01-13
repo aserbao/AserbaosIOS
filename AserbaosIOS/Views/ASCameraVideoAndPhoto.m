@@ -3,11 +3,12 @@
 //  AserbaosIOS
 //
 //  Created by aserbao on 2021/1/12.
-// 实现相机预览及拍摄视频
+// 实现相机预览及拍摄视频，及捕获相机图片
 
-#import "ASCameraVideo.h"
+#import "ASCameraVideoAndPhoto.h"
 #import <AVFoundation/AVFoundation.h>
-@interface ASCameraVideo()<AVCaptureFileOutputRecordingDelegate>{
+
+@interface ASCameraVideoAndPhoto()<AVCaptureFileOutputRecordingDelegate>{
     BOOL isRecording;
 }
 @property (strong, nonatomic) AVCaptureSession *session;
@@ -19,7 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *_takeButton;
 @end
 
-@implementation ASCameraVideo
+@implementation ASCameraVideoAndPhoto
 
 - (instancetype)initWithFrame:(CGRect)frame withPositionDevice:(BOOL)isBack didRecord:(void (^)(NSURL *outputFileUrl, NSError *error))completionBlock{
     if(self = [super initWithFrame:frame]){

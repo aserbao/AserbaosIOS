@@ -6,7 +6,7 @@
 //
 
 #import "ViewController.h"
-
+#import "ASCameraViewController.h"
 
 @interface ViewController ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 - (IBAction)calc;
@@ -24,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *scrollImageView;
 @property (weak, nonatomic) IBOutlet UITableView *leftTableView;
 - (IBAction)testFunc;
+- (IBAction)aboutCamera:(UIButton *)sender;
 
 
 @property (nonatomic, strong) NSTimer *timer;
@@ -300,6 +301,27 @@
 - (void) useUITableView{
     self.leftTableView.delegate = self;
 }
+// 相机相关内容
+- (IBAction)aboutCamera:(UIButton *)sender {
+    NSUInteger _type = CAMERA_ONLY_PREVIEW;
+    switch (sender.tag) {
+        case 1:
+            _type = CAMERA_ONLY_PREVIEW;
+            break;
+        case 2:
+            _type = CAMERA_PREVIEW_AND_CAPTURE;
+            break;
+        case 3:
+            _type = CAMERA_PREVIEW_AND_VIDEO;
+            break;
+        case 4:
+            _type = CAMERA_PREVIEW_VIDEO_CAPTURE;
+            break;
+    }
+    ASCameraViewController *asCameraView = [[ASCameraViewController alloc]initWithType:_type];
+    [self.navigationController pushViewController:asCameraView animated:YES];
+}
+
 
 /// 测试
 - (IBAction)testFunc {

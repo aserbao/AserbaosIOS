@@ -15,13 +15,10 @@
 
 @end
 
-@implementation ASCameraPreview{
-    TakePhotoSuccess _takePhotoSuccess;
-}
+@implementation ASCameraPreview
 
-- (instancetype)initWithFrame:(CGRect)frame withPositionDevice:(BOOL)isBack withTakePhotoSuccess:(TakePhotoSuccess)takePhotoSuccess{
+- (instancetype)initWithFrame:(CGRect)frame withPositionDevice:(BOOL)isBack {
     if(self = [super initWithFrame:frame]){
-        _takePhotoSuccess = takePhotoSuccess;
         if(isBack){
             [self initCameraWithPosition:AVCaptureDevicePositionBack];
         }else{

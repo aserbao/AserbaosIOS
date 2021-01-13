@@ -8,11 +8,10 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-typedef void(^TakePhotoSuccess)(void);
 
 @interface ASCameraPreview : UIView
 ///初始化
-- (instancetype)initWithFrame:(CGRect)frame withPositionDevice:(BOOL)isBack withTakePhotoSuccess:(TakePhotoSuccess)takePhotoSuccess;
+- (instancetype)initWithFrame:(CGRect)frame withPositionDevice:(BOOL)isBack;
 @end
 
 NS_ASSUME_NONNULL_END

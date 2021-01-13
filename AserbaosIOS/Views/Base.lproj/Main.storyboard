@@ -11,10 +11,14 @@
         <!--Navigation Controller-->
         <scene sceneID="igW-ob-ex9">
             <objects>
-                <navigationController navigationBarHidden="YES" id="aiS-Kv-sdw" sceneMemberID="viewController">
+                <navigationController hidesBarsOnTap="YES" id="aiS-Kv-sdw" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GSl-67-mni">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eD9-5e-oVG">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="UyE-SO-CrO"/>
                     </connections>
@@ -194,7 +198,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9mX-0C-DKz" userLabel="left Table View">
-                                <rect key="frame" x="25" y="486" width="185" height="340"/>
+                                <rect key="frame" x="19" y="486" width="185" height="340"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
@@ -223,16 +227,52 @@
                                     <action selector="testFunc" destination="BYZ-38-t0r" eventType="touchUpInside" id="UmI-YO-yN6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="13" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bH-lf-Rmh">
-                                <rect key="frame" x="218" y="486" width="70" height="33"/>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bH-lf-Rmh">
+                                <rect key="frame" x="218" y="486" width="130" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <state key="normal" title="相机">
+                                <state key="normal" title="相机预览">
                                     <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="lXK-SL-aEC" kind="show" id="JeK-uh-pYg"/>
+                                    <action selector="aboutCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kSo-Jc-aNx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="COQ-8l-3Aq">
+                                <rect key="frame" x="218" y="527" width="130" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="相机拍照">
+                                    <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="aboutCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Txa-1V-RTp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B7q-3h-pjC">
+                                <rect key="frame" x="218" y="568" width="130" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="拍视频">
+                                    <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="aboutCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D7Y-uM-asf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tGr-6u-o3P">
+                                <rect key="frame" x="218" y="609" width="130" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="拍视频 + 拍照">
+                                    <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="aboutCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YpP-N1-9Hf"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -252,11 +292,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="480" y="17"/>
+            <point key="canvasLocation" x="479.71014492753625" y="16.741071428571427"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="DH9-9D-HnZ">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KWh-pb-2Cw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="lXK-SL-aEC" customClass="ASCameraViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ccN-Ei-4Yb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -266,7 +307,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="kxj-Mv-pQN"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KWh-pb-2Cw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1417" y="17"/>
         </scene>
