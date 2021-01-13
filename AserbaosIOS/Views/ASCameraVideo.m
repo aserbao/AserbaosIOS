@@ -7,20 +7,22 @@
 
 #import "ASCameraVideo.h"
 #import <AVFoundation/AVFoundation.h>
-@interface ASCameraVideo()<AVCapturePhotoCaptureDelegate>
+@interface ASCameraVideo()<AVCaptureFileOutputRecordingDelegate>{
+    BOOL isRecording;
+}
 @property (strong, nonatomic) AVCaptureSession *session;
 @property (strong, nonatomic) AVCaptureDevice *_device;
-@property (strong, nonatomic) AVCapturePhotoOutput *capturePhotoOutput;
+
+@property (strong, nonatomic) AVCaptureMovieFileOutput *movieFileOutput;
 @property (strong, nonatomic) AVCapturePhotoSettings *_outputSettings;
+@property (nonatomic, copy) void (^didRecordCompletionBlock)(NSURL *outputFileUrl, NSError *error);
 @end
 
-@implementation ASCameraVideo{
-    TakePhotoSuccess _takePhotoSuccess;
-}
+@implementation ASCameraVideo
 
-- (instancetype)initWithFrame:(CGRect)frame withPositionDevice:(BOOL)isBack withTakePhotoSuccess:(TakePhotoSuccess)takePhotoSuccess{
+- (instancetype)initWithFrame:(CGRect)frame withPositionDevice:(BOOL)isBack didRecord:(void (^)(NSURL *outputFileUrl, NSError *error))completionBlock{
     if(self = [super initWithFrame:frame]){
-        _takePhotoSuccess = takePhotoSuccess;
+        self.didRecordCompletionBlock = completionBlock;
         if(isBack){
             [self initCameraWithPosition:AVCaptureDevicePositionBack];
         }else{
@@ -40,7 +42,7 @@
     takeButton.layer.masksToBounds = YES;
     takeButton.layer.cornerRadius = takeButton.frame.size.height/2;
     takeButton.backgroundColor = [UIColor colorWithWhite:1 alpha:0.7];
-    [takeButton setTitle:@"拍照" forState:UIControlStateNormal];
+    [takeButton setTitle:@"拍视频" forState:UIControlStateNormal];
     takeButton.titleLabel.font = [UIFont systemFontOfSize:16];
     takeButton.titleLabel.numberOfLines = 0;
     [takeButton setTitleColor:[UIColor colorWithRed:40.2f/255 green:180.2f/255 blue:247.2f/255 alpha:0.9] forState:UIControlStateNormal];
@@ -76,15 +78,12 @@
     }
    
     // should create PhotoOutput if you want capture picture
-    // 创建AVCapturePhotoOutput的输出
-    self.capturePhotoOutput = [[AVCapturePhotoOutput alloc] init];
-    // 设置输出图片格式
-    NSDictionary *setDic = @{AVVideoCodecKey:AVVideoCodecTypeJPEG};
-    self._outputSettings = [AVCapturePhotoSettings photoSettingsWithFormat:setDic];
-    // 一些配置信息
-    [self.capturePhotoOutput setPhotoSettingsForSceneMonitoring:self._outputSettings];
-    // 添加到Session中
-    [self.session addOutput:self.capturePhotoOutput];
+    // 创建AVCaptureMovieFileOutput的输出
+    self.movieFileOutput = [[AVCaptureMovieFileOutput alloc] init];
+    [self.movieFileOutput setMovieFragmentInterval:kCMTimeInvalid];
+    if([self.session canAddOutput:self.movieFileOutput]) {
+        [self.session addOutput:self.movieFileOutput];
+    }
     
     // step4: create a previewLayout
     AVCaptureVideoPreviewLayer *previewLayout = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.session];
@@ -97,15 +96,34 @@
     [self.session startRunning];
 }
 // ----------------------- AVCapturePhotoCaptureDelegate 方法实现----------------------
+/// 开始录像
+- (void)captureOutput:(AVCaptureFileOutput *)output didStartRecordingToOutputFileAtURL:(NSURL *)fileURL fromConnections:(NSArray<AVCaptureConnection *> *)connections{
+    isRecording = true;
+}
+- (void)captureOutput:(AVCaptureFileOutput *)output didFinishRecordingToOutputFileAtURL:(NSURL *)outputFileURL fromConnections:(NSArray<AVCaptureConnection *> *)connections error:(NSError *)error{
+    isRecording = false;
+    if(self.didRecordCompletionBlock){
+        self.didRecordCompletionBlock(outputFileURL,error);
+    }
+}
 
-/// 拍照方法，设置代理
+
+/// 拍视频方法
 -(void) takeVideo{
-    //创建图片输出格式
-    NSDictionary *setDic = @{AVVideoCodecKey:AVVideoCodecTypeJPEG};
-    //配置格式
-    AVCapturePhotoSettings *outputSettings = [AVCapturePhotoSettings photoSettingsWithFormat:setDic];
-    //配置输出代理
-    [self.capturePhotoOutput capturePhotoWithSettings:outputSettings delegate:self];
+    if(isRecording){
+        NSLog(@"停止拍摄");
+        [self stopVideo];
+    }else{
+        NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+        NSURL *outputURL = [[url
+                             URLByAppendingPathComponent:@"test1"] URLByAppendingPathExtension:@"mov"];
+        NSLog(@"开始拍摄 %@",outputURL);
+        [self.movieFileOutput startRecordingToOutputFileURL:outputURL recordingDelegate:self];
+    }
+}
+
+- (void) stopVideo{
+    [self.movieFileOutput stopRecording];
 }
 
 

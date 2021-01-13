@@ -12,6 +12,7 @@
 		2B49C5E425AD8F8C00AC8493 /* ASCameraPreview.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B49C5E325AD8F8C00AC8493 /* ASCameraPreview.m */; };
 		2B49C5F025ADCE7700AC8493 /* ASCameraCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B49C5EF25ADCE7700AC8493 /* ASCameraCapture.m */; };
 		2B49C5F525ADD1AD00AC8493 /* ASCameraVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B49C5F425ADD1AD00AC8493 /* ASCameraVideo.m */; };
+		2B49C60825AEA1BF00AC8493 /* ASVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B49C60725AEA1BF00AC8493 /* ASVideoViewController.m */; };
 		2B76E7CC25A8653D001A1E5C /* ASStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B76E7CB25A8653D001A1E5C /* ASStudent.m */; };
 		2B76E7D125A86A5A001A1E5C /* ASStudent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B76E7D025A86A5A001A1E5C /* ASStudent.xib */; };
 		2B76E7E325A86EE6001A1E5C /* ASStudentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B76E7E225A86EE6001A1E5C /* ASStudentView.m */; };
@@ -56,6 +57,9 @@
 		2B49C5EF25ADCE7700AC8493 /* ASCameraCapture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASCameraCapture.m; sourceTree = "<group>"; };
 		2B49C5F425ADD1AD00AC8493 /* ASCameraVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASCameraVideo.m; sourceTree = "<group>"; };
 		2B49C5F925ADD1BA00AC8493 /* ASCameraVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASCameraVideo.h; sourceTree = "<group>"; };
+		2B49C60625AEA1BF00AC8493 /* ASVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASVideoViewController.h; sourceTree = "<group>"; };
+		2B49C60725AEA1BF00AC8493 /* ASVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASVideoViewController.m; sourceTree = "<group>"; };
+		2B49C62825AEDC3000AC8493 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		2B76E7CA25A8653D001A1E5C /* ASStudent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASStudent.h; sourceTree = "<group>"; };
 		2B76E7CB25A8653D001A1E5C /* ASStudent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASStudent.m; sourceTree = "<group>"; };
 		2B76E7D025A86A5A001A1E5C /* ASStudent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ASStudent.xib; sourceTree = "<group>"; };
@@ -124,6 +128,8 @@
 		2B76E7E925A99C04001A1E5C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2B49C60625AEA1BF00AC8493 /* ASVideoViewController.h */,
+				2B49C60725AEA1BF00AC8493 /* ASVideoViewController.m */,
 				2B99EC9A25A73AAA00951772 /* Main.storyboard */,
 				2B99EC9F25A73AAC00951772 /* LaunchScreen.storyboard */,
 				2B76E7D025A86A5A001A1E5C /* ASStudent.xib */,
@@ -364,6 +370,7 @@
 				2B99ECA425A73AAC00951772 /* main.m in Sources */,
 				2B76E7CC25A8653D001A1E5C /* ASStudent.m in Sources */,
 				2B49C5E425AD8F8C00AC8493 /* ASCameraPreview.m in Sources */,
+				2B49C60825AEA1BF00AC8493 /* ASVideoViewController.m in Sources */,
 				2B99ED1725A8440900951772 /* ASTomcatViewController.m in Sources */,
 				2B49C5F525ADD1AD00AC8493 /* ASCameraVideo.m in Sources */,
 				2B99EC9625A73AAA00951772 /* SceneDelegate.m in Sources */,
@@ -406,6 +413,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2B99EC9B25A73AAA00951772 /* Base */,
+				2B49C62825AEDC3000AC8493 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

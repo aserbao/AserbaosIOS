@@ -1,0 +1,42 @@
+
+/* Class = "UIButton"; normalTitle = "相机"; ObjectID = "1bH-lf-Rmh"; */
+"1bH-lf-Rmh.normalTitle" = "相机";
+
+/* Class = "UIButton"; normalTitle = "平移"; ObjectID = "3AT-bW-A5d"; */
+"3AT-bW-A5d.normalTitle" = "平移";
+
+/* Class = "UIButton"; normalTitle = "弹框"; ObjectID = "4c3-Mt-meH"; */
+"4c3-Mt-meH.normalTitle" = "弹框";
+
+/* Class = "UIButton"; normalTitle = "UseLabel"; ObjectID = "9fU-N4-KWh"; */
+"9fU-N4-KWh.normalTitle" = "UseLabel";
+
+/* Class = "UIButton"; normalTitle = "useDictionary"; ObjectID = "BJJ-hV-WwA"; */
+"BJJ-hV-WwA.normalTitle" = "useDictionary";
+
+/* Class = "UIButton"; normalTitle = "缩放"; ObjectID = "CwO-jR-xKY"; */
+"CwO-jR-xKY.normalTitle" = "缩放";
+
+/* Class = "UIButton"; normalTitle = "旋转"; ObjectID = "Jue-YV-vO2"; */
+"Jue-YV-vO2.normalTitle" = "旋转";
+
+/* Class = "UILabel"; text = "="; ObjectID = "NeF-QE-mBu"; */
+"NeF-QE-mBu.text" = "=";
+
+/* Class = "UIButton"; normalTitle = "计算"; ObjectID = "POB-U9-ojZ"; */
+"POB-U9-ojZ.normalTitle" = "计算";
+
+/* Class = "UIButton"; normalTitle = "Test"; ObjectID = "fg0-EV-gji"; */
+"fg0-EV-gji.normalTitle" = "Test";
+
+/* Class = "UIButton"; normalTitle = "基础"; ObjectID = "h9o-dO-KsM"; */
+"h9o-dO-KsM.normalTitle" = "基础";
+
+/* Class = "UIButton"; normalTitle = "计时器"; ObjectID = "mFv-Bx-rc4"; */
+"mFv-Bx-rc4.normalTitle" = "计时器";
+
+/* Class = "UIButton"; normalTitle = "复位"; ObjectID = "w6I-TE-zvB"; */
+"w6I-TE-zvB.normalTitle" = "复位";
+
+/* Class = "UILabel"; text = "+"; ObjectID = "xgh-g9-GMG"; */
+"xgh-g9-GMG.text" = "+";
