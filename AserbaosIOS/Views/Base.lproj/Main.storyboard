@@ -11,9 +11,8 @@
         <!--Navigation Controller-->
         <scene sceneID="igW-ob-ex9">
             <objects>
-                <navigationController hidesBarsOnTap="YES" id="aiS-Kv-sdw" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="aiS-Kv-sdw" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GSl-67-mni">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eD9-5e-oVG">
@@ -275,6 +274,18 @@
                                     <action selector="aboutCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YpP-N1-9Hf"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uLw-Dp-Ftp">
+                                <rect key="frame" x="218" y="650" width="130" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="GLKit">
+                                    <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="E1r-pt-KJS" kind="push" id="WOm-1x-dJ9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemPinkColor"/>
@@ -294,21 +305,23 @@
             </objects>
             <point key="canvasLocation" x="479.71014492753625" y="16.741071428571427"/>
         </scene>
-        <!--Camera View Controller-->
-        <scene sceneID="DH9-9D-HnZ">
+        <!--GLKit View Controller-->
+        <scene sceneID="sLs-Oi-aRF">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KWh-pb-2Cw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewController id="lXK-SL-aEC" customClass="ASCameraViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ccN-Ei-4Yb">
+                <glkViewController preferredFramesPerSecond="60" id="E1r-pt-KJS" customClass="ASGLKitViewController" sceneMemberID="viewController">
+                    <glkView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" enableSetNeedsDisplay="NO" id="iVt-lb-Jo3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="91u-g3-x9T"/>
-                        <color key="backgroundColor" systemColor="systemGray4Color"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="kxj-Mv-pQN"/>
-                </viewController>
+                        <viewLayoutGuide key="safeArea" id="Dro-XK-So0"/>
+                        <connections>
+                            <outlet property="delegate" destination="E1r-pt-KJS" id="u7e-FB-C2a"/>
+                        </connections>
+                    </glkView>
+                    <navigationItem key="navigationItem" id="Fw4-L5-DRY"/>
+                </glkViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YlF-L0-VqE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1417" y="17"/>
+            <point key="canvasLocation" x="1587" y="17"/>
         </scene>
     </scenes>
     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -323,8 +336,8 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemGray4Color">
-            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
