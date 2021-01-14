@@ -9,6 +9,7 @@
 #import "ASCameraPreview.h"
 #import "ASCameraCapture.h"
 #import "ASCameraVideo.h"
+#import "ASCameraVideoAndPhoto.h"
 #import "ASVideoViewController.h"
 
 
@@ -39,6 +40,9 @@
             // 相机录像功能
             [self addCameraVideo];
             break;
+        case CAMERA_PREVIEW_VIDEO_CAPTURE:
+            [self addCameraVideoAndCapture];
+            break;
         default:
             break;
     }
@@ -63,13 +67,22 @@
 /// 添加相机拍视频
 - (void)addCameraVideo{
     ASCameraVideo *asCameraVideo = [[ASCameraVideo alloc] initWithFrame:[UIScreen mainScreen].bounds withPositionDevice:YES didRecord:^(NSURL *outputFileUrl, NSError *error) {
+        NSLog(@"视频拍摄成功了 保存路径在:%@",outputFileUrl);
         ASVideoViewController *vc = [[ASVideoViewController alloc] initWithVideoUrl:outputFileUrl];
         [self.navigationController pushViewController:vc animated:YES];
     }];
     [self.view addSubview:asCameraVideo];
 }
 
+/// 添加视频拍摄和照片获取
 - (void)addCameraVideoAndCapture{
-    
+    ASCameraVideoAndPhoto *asCameraVideoAndCapture = [[ASCameraVideoAndPhoto alloc]initWithFrame:[UIScreen mainScreen].bounds withPositionDevice:YES didRecord:^(NSURL *outputFileUrl, NSError *error) {
+        NSLog(@"视频拍摄成功了 保存路径在:%@",outputFileUrl);
+        ASVideoViewController *vc = [[ASVideoViewController alloc] initWithVideoUrl:outputFileUrl];
+        [self.navigationController pushViewController:vc animated:YES];
+    } didTakeSuccess:^{
+        NSLog(@"拍照成功了");
+    }];
+    [self.view addSubview:asCameraVideoAndCapture];
 }
 @end

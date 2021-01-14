@@ -106,7 +106,7 @@
     //step5: session start running
     [self.session startRunning];
 }
-// ----------------------- AVCapturePhotoCaptureDelegate 方法实现----------------------
+// ----------------------- AVCaptureFileOutputRecordingDelegate 方法实现----------------------
 /// 开始录像
 - (void)captureOutput:(AVCaptureFileOutput *)output didStartRecordingToOutputFileAtURL:(NSURL *)fileURL fromConnections:(NSArray<AVCaptureConnection *> *)connections{
     isRecording = true;
@@ -124,20 +124,16 @@
     if(isRecording){
         [self._takeButton setTitle:@"拍视频" forState:UIControlStateNormal];
         NSLog(@"停止拍摄");
-        [self stopVideo];
+        [self.movieFileOutput stopRecording];
     }else{
         [self._takeButton setTitle:@"停止拍摄" forState:UIControlStateNormal];
         NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-        NSURL *outputURL = [[url
-                             URLByAppendingPathComponent:@"test1"] URLByAppendingPathExtension:@"mov"];
+        NSURL *outputURL = [[url URLByAppendingPathComponent:@"aserbao_test"] URLByAppendingPathExtension:@"mov"];
         NSLog(@"开始拍摄 %@",outputURL);
         [self.movieFileOutput startRecordingToOutputFileURL:outputURL recordingDelegate:self];
     }
 }
 
-- (void) stopVideo{
-    [self.movieFileOutput stopRecording];
-}
 
 
 

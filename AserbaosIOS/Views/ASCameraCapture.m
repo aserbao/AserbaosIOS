@@ -116,6 +116,7 @@
         msg = @"保存图片失败" ;
     }else{
         msg = @"保存图片成功" ;
+        _takePhotoSuccess();
     }
     NSLog(@"+++++++++++%@", msg);
 }
@@ -128,7 +129,5 @@
     //配置输出代理
     [self.capturePhotoOutput capturePhotoWithSettings:outputSettings delegate:self];
 }
-
-
 
 @end
