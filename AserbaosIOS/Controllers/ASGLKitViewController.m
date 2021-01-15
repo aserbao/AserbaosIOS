@@ -29,15 +29,15 @@
     //2.获取GLKView & 设置context
     GLKView *view =(GLKView *) self.view;
     view.context = context;
-    
-//    //3.配置视图创建的渲染缓存区.
-//    view.drawableColorFormat = GLKViewDrawableColorFormatRGBA8888;
-//    view.drawableDepthFormat = GLKViewDrawableDepthFormat16;
 }
 
 -(void)glkView:(GLKView *)view drawInRect:(CGRect)rect{
     glClearColor(0.3, 0.4, 0.5, 1.0);
     glClear(GL_COLOR_BUFFER_BIT);
+    
+    //detect
+    
+    //draw
 }
 
 -(void)glkViewControllerUpdate:(GLKViewController *)controller{

@@ -130,4 +130,6 @@
     [self.capturePhotoOutput capturePhotoWithSettings:outputSettings delegate:self];
 }
 
+
+
 @end

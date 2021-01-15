@@ -29,6 +29,7 @@
 		2B99ECB925A73AAC00951772 /* AserbaosIOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B99ECB825A73AAC00951772 /* AserbaosIOSUITests.m */; };
 		2B99ECFC25A8344400951772 /* Students.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2B99ECFB25A8344400951772 /* Students.plist */; };
 		2B99ED1725A8440900951772 /* ASTomcatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B99ED1625A8440900951772 /* ASTomcatViewController.m */; };
+		2BDAD89E25B1876C001ECB2A /* ASRippleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDAD89D25B1876C001ECB2A /* ASRippleViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,8 @@
 		2B99ECFB25A8344400951772 /* Students.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Students.plist; sourceTree = "<group>"; };
 		2B99ED1625A8440900951772 /* ASTomcatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASTomcatViewController.m; sourceTree = "<group>"; };
 		2B99ED1F25A8445000951772 /* ASTomcatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASTomcatViewController.h; sourceTree = "<group>"; };
+		2BDAD89C25B1876C001ECB2A /* ASRippleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASRippleViewController.h; sourceTree = "<group>"; };
+		2BDAD89D25B1876C001ECB2A /* ASRippleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASRippleViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,13 +122,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2B6BA2CD25B05AD700C48380 /* opengl */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = opengl;
-			sourceTree = "<group>";
-		};
 		2B76E7E725A99BF4001A1E5C /* Others */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,7 +137,6 @@
 		2B76E7E925A99C04001A1E5C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2B6BA2CD25B05AD700C48380 /* opengl */,
 				2B99EC9A25A73AAA00951772 /* Main.storyboard */,
 				2B99EC9F25A73AAC00951772 /* LaunchScreen.storyboard */,
 				2B76E7D025A86A5A001A1E5C /* ASStudent.xib */,
@@ -173,6 +168,7 @@
 		2B76E7EB25A99C13001A1E5C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2BDAD89B25B1874A001ECB2A /* opengl */,
 				2B99EC9725A73AAA00951772 /* ViewController.h */,
 				2B99ED1625A8440900951772 /* ASTomcatViewController.m */,
 				2B99ED1F25A8445000951772 /* ASTomcatViewController.h */,
@@ -245,6 +241,15 @@
 				2B99ECFB25A8344400951772 /* Students.plist */,
 			);
 			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		2BDAD89B25B1874A001ECB2A /* opengl */ = {
+			isa = PBXGroup;
+			children = (
+				2BDAD89C25B1876C001ECB2A /* ASRippleViewController.h */,
+				2BDAD89D25B1876C001ECB2A /* ASRippleViewController.m */,
+			);
+			path = opengl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,6 +386,7 @@
 			files = (
 				2B49C5F025ADCE7700AC8493 /* ASCameraCapture.m in Sources */,
 				2B49C64425B04E7000AC8493 /* ASGLKitViewController.m in Sources */,
+				2BDAD89E25B1876C001ECB2A /* ASRippleViewController.m in Sources */,
 				2B49C63025AEEBE200AC8493 /* ASCameraVideoAndPhoto.m in Sources */,
 				2B49C5D525AD53A300AC8493 /* ASPerson.m in Sources */,
 				2B99EC9925A73AAA00951772 /* ViewController.m in Sources */,

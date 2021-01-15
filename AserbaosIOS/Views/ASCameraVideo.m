@@ -119,6 +119,8 @@
 }
 
 
+
+
 /// 拍视频方法
 -(void) takeVideo{
     if(isRecording){
