@@ -11,8 +11,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ASRippleViewController : GLKViewController
-
+@interface ASRippleViewController : GLKViewController<AVCaptureVideoDataOutputSampleBufferDelegate>
+@property(nonatomic) CGFloat saturation;
 @end
 
 NS_ASSUME_NONNULL_END

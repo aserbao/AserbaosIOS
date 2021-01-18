@@ -30,6 +30,8 @@
 		2B99ECFC25A8344400951772 /* Students.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2B99ECFB25A8344400951772 /* Students.plist */; };
 		2B99ED1725A8440900951772 /* ASTomcatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B99ED1625A8440900951772 /* ASTomcatViewController.m */; };
 		2BDAD89E25B1876C001ECB2A /* ASRippleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDAD89D25B1876C001ECB2A /* ASRippleViewController.m */; };
+		2BDAD8AB25B56444001ECB2A /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 2BDAD8AA25B56444001ECB2A /* Shader.fsh */; };
+		2BDAD8B325B56463001ECB2A /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 2BDAD8B225B56463001ECB2A /* Shader.vsh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +97,8 @@
 		2B99ED1F25A8445000951772 /* ASTomcatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASTomcatViewController.h; sourceTree = "<group>"; };
 		2BDAD89C25B1876C001ECB2A /* ASRippleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASRippleViewController.h; sourceTree = "<group>"; };
 		2BDAD89D25B1876C001ECB2A /* ASRippleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASRippleViewController.m; sourceTree = "<group>"; };
+		2BDAD8AA25B56444001ECB2A /* Shader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Shader.fsh; sourceTree = "<group>"; };
+		2BDAD8B225B56463001ECB2A /* Shader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Shader.vsh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,10 +250,20 @@
 		2BDAD89B25B1874A001ECB2A /* opengl */ = {
 			isa = PBXGroup;
 			children = (
+				2BDAD8A925B56419001ECB2A /* Shaders */,
 				2BDAD89C25B1876C001ECB2A /* ASRippleViewController.h */,
 				2BDAD89D25B1876C001ECB2A /* ASRippleViewController.m */,
 			);
 			path = opengl;
+			sourceTree = "<group>";
+		};
+		2BDAD8A925B56419001ECB2A /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				2BDAD8AA25B56444001ECB2A /* Shader.fsh */,
+				2BDAD8B225B56463001ECB2A /* Shader.vsh */,
+			);
+			name = Shaders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,6 +369,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BDAD8AB25B56444001ECB2A /* Shader.fsh in Resources */,
+				2BDAD8B325B56463001ECB2A /* Shader.vsh in Resources */,
 				2B99ECA125A73AAC00951772 /* LaunchScreen.storyboard in Resources */,
 				2B99EC9E25A73AAC00951772 /* Assets.xcassets in Resources */,
 				2B76E7D125A86A5A001A1E5C /* ASStudent.xib in Resources */,
