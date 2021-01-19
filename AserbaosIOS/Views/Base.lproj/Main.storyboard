@@ -277,13 +277,25 @@
                             <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uLw-Dp-Ftp">
                                 <rect key="frame" x="218" y="650" width="130" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <state key="normal" title="GLKit">
+                                <state key="normal" title="ASimpleDemo">
                                     <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
                                 </state>
                                 <connections>
                                     <segue destination="pet-u5-SXT" kind="push" id="vcr-V5-QLl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esj-tZ-Hlb">
+                                <rect key="frame" x="218" y="691" width="130" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="Bytedance">
+                                    <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="cZd-ZT-mnn" kind="show" id="PMF-BS-1uK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -321,7 +333,25 @@
                 </glkViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bAa-D3-Rdl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1532" y="17"/>
+            <point key="canvasLocation" x="1532" y="-343"/>
+        </scene>
+        <!--GLKit View Controller-->
+        <scene sceneID="v2M-jD-voJ">
+            <objects>
+                <glkViewController preferredFramesPerSecond="30" id="cZd-ZT-mnn" customClass="ASByteEffectsViewController" sceneMemberID="viewController">
+                    <glkView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" enableSetNeedsDisplay="NO" id="K8u-lf-sZy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Ksv-0g-GWD"/>
+                        <connections>
+                            <outlet property="delegate" destination="cZd-ZT-mnn" id="evD-tF-ju3"/>
+                        </connections>
+                    </glkView>
+                    <navigationItem key="navigationItem" id="kfD-st-uwr"/>
+                </glkViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BqE-Xl-yxN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1532" y="364"/>
         </scene>
     </scenes>
     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -335,9 +365,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

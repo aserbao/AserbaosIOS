@@ -3,9 +3,9 @@
 //  AserbaosIOS
 //
 //  Created by aserbao on 2021/1/15.
-// 参考SimpleRippleDemo
+//
 
-#import "ASRippleViewController.h"
+#import "ASByteEffectsViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <OpenGLES/ES2/gl.h>
 #import <OpenGLES/ES2/glext.h>
@@ -29,9 +29,15 @@ static const GLfloat textureVertices[] = {
     0.0f, 0.0f,
     1.0f, 1.0f,
     0.0f, 1.0f,
+
+  
+//    0.0f, 0.0f,
+//    0.0f, 1.0f,
+    
+    
 };
 
-@interface ASRippleViewController ()<AVCaptureVideoDataOutputSampleBufferDelegate>
+@interface ASByteEffectsViewController ()<AVCaptureVideoDataOutputSampleBufferDelegate>
 
 @property(nonatomic,weak) GLKView *glView;
 @property(nonatomic) CGFloat retinaScaleFactor; //to keep it ok with iPhone 5/6
@@ -40,8 +46,6 @@ static const GLfloat textureVertices[] = {
 @property(nonatomic) GLuint shaderProgram;
 
 @property(nonatomic) GLint tex1Uniform;
-@property(nonatomic) GLint tex2Uniform;
-@property(nonatomic) GLint matrixUniform;
 @property(nonatomic) GLint saturationUniform;
 
 //opnegl
@@ -49,14 +53,13 @@ static const GLfloat textureVertices[] = {
 
 //camera textures and device
 @property (nonatomic) CVOpenGLESTextureRef lumaTexture;
-@property (nonatomic) CVOpenGLESTextureRef chromaTexture;
 @property (nonatomic) CVOpenGLESTextureCacheRef videoTextureCache;
 @property (nonatomic, strong) AVCaptureSession *session;
 @property (nonatomic, strong) NSString *sessionPreset;
 
 @end
 
-@implementation ASRippleViewController
+@implementation ASByteEffectsViewController
 
 -(void)viewDidLoad {
     
@@ -82,7 +85,7 @@ static const GLfloat textureVertices[] = {
     
     self.view.contentScaleFactor = self.retinaScaleFactor;
     
-    _sessionPreset = AVCaptureSessionPreset640x480;
+    _sessionPreset = AVCaptureSessionPreset1280x720;
     
     [self setupGL];
     [self setupAVCapture];
@@ -118,27 +121,17 @@ static const GLfloat textureVertices[] = {
     glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
-    if(_lumaTexture != 0 && _chromaTexture != 0){
+    if(_lumaTexture != 0){
         
         glUseProgram(_shaderProgram);
         
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(CVOpenGLESTextureGetTarget(_lumaTexture), CVOpenGLESTextureGetName(_lumaTexture));
-       
         glUniform1i(_tex1Uniform,0);
-        glActiveTexture(GL_TEXTURE1);
-        glBindTexture(CVOpenGLESTextureGetTarget(_chromaTexture), CVOpenGLESTextureGetName(_chromaTexture));
-        glUniform1i(_tex2Uniform,1);
-        glUniformMatrix4fv(_matrixUniform, 1 ,false ,GLKMatrix4MakeRotation(0, 0, 0, 1).m);
-        glUniform1f(_saturationUniform, _saturation);
-        glDisable(GL_DEPTH_TEST);
         
         glVertexAttribPointer(ATTRIB_VERTEX, 2, GL_FLOAT, 0, 0, squareVertices);
-        
         glEnableVertexAttribArray(ATTRIB_VERTEX);
-        
         glVertexAttribPointer(ATTRIB_COORDS, 2, GL_FLOAT, 0, 0, textureVertices);
-        
         glEnableVertexAttribArray(ATTRIB_COORDS);
         
         glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
@@ -154,13 +147,7 @@ static const GLfloat textureVertices[] = {
         CFRelease(_lumaTexture);
         _lumaTexture = NULL;
     }
-    
-    if (_chromaTexture)
-    {
-        CFRelease(_chromaTexture);
-        _chromaTexture = NULL;
-    }
-    
+
     // Periodic texture cache flush every frame
     CVOpenGLESTextureCacheFlush(_videoTextureCache, 0);
 }
@@ -185,17 +172,17 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     // CVOpenGLESTextureCacheCreateTextureFromImage will create GLES texture
     // optimally from CVImageBufferRef.
     
-    // Y-plane
+
     glActiveTexture(GL_TEXTURE0);
     err = CVOpenGLESTextureCacheCreateTextureFromImage(kCFAllocatorDefault,
                                                        _videoTextureCache,
                                                        pixelBuffer,
                                                        NULL,
                                                        GL_TEXTURE_2D,
-                                                       GL_RED_EXT,
+                                                       GL_RGBA,
                                                        (int)width,
                                                        (int)height,
-                                                       GL_RED_EXT,
+                                                       GL_RGBA,
                                                        GL_UNSIGNED_BYTE,
                                                        0,
                                                        &_lumaTexture);
@@ -205,31 +192,14 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     }
     
     glBindTexture(CVOpenGLESTextureGetTarget(_lumaTexture), CVOpenGLESTextureGetName(_lumaTexture));
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
     glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
     
-    // UV-plane
-    glActiveTexture(GL_TEXTURE1);
-    err = CVOpenGLESTextureCacheCreateTextureFromImage(kCFAllocatorDefault,
-                                                       _videoTextureCache,
-                                                       pixelBuffer,
-                                                       NULL,
-                                                       GL_TEXTURE_2D,
-                                                       GL_RG_EXT,
-                                                       (int)(width * 0.5),
-                                                       (int)(height * 0.5),
-                                                       GL_RG_EXT,
-                                                       GL_UNSIGNED_BYTE,
-                                                       1,
-                                                       &_chromaTexture);
-    if (err)
-    {
-        NSLog(@"Error at CVOpenGLESTextureCacheCreateTextureFromImage %d", err);
-    }
+    glBindTexture(GL_TEXTURE_2D, 0);
     
-    glBindTexture(CVOpenGLESTextureGetTarget(_chromaTexture), CVOpenGLESTextureGetName(_chromaTexture));
-    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+    
 }
 
 - (void)setupAVCapture
@@ -283,8 +253,8 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     [dataOutput setAlwaysDiscardsLateVideoFrames:YES]; // Probably want to set this to NO when recording
     
     //-- Set to YUV420.
-    [dataOutput setVideoSettings:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt:kCVPixelFormatType_420YpCbCr8BiPlanarFullRange]
-//    [dataOutput setVideoSettings:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt:kCVPixelFormatType_32BGRA]
+//    [dataOutput setVideoSettings:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt:kCVPixelFormatType_420YpCbCr8BiPlanarFullRange]
+    [dataOutput setVideoSettings:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt:kCVPixelFormatType_32BGRA]
                                                              forKey:(id)kCVPixelBufferPixelFormatTypeKey]]; // Necessary for manual preview
     
     // Set dispatch to be on the main thread so OpenGL can do things with the data
@@ -338,14 +308,14 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     _shaderProgram = glCreateProgram();
     
     // Create and compile vertex shader.
-    vertShaderPathname = [[NSBundle mainBundle] pathForResource:@"Shader" ofType:@"vsh"];
+    vertShaderPathname = [[NSBundle mainBundle] pathForResource:@"Bytedance" ofType:@"vsh"];
     if (![self compileShader:&vertShader type:GL_VERTEX_SHADER file:vertShaderPathname]) {
         NSLog(@"Failed to compile vertex shader");
         return NO;
     }
     
     // Create and compile fragment shader.
-    fragShaderPathname = [[NSBundle mainBundle] pathForResource:@"Shader" ofType:@"fsh"];
+    fragShaderPathname = [[NSBundle mainBundle] pathForResource:@"Bytedance" ofType:@"fsh"];
     if (![self compileShader:&fragShader type:GL_FRAGMENT_SHADER file:fragShaderPathname]) {
         NSLog(@"Failed to compile fragment shader");
         return NO;
@@ -383,12 +353,8 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     }
     
     // Get uniform locations.
-    _matrixUniform = glGetUniformLocation(_shaderProgram, "modelview");
-    _tex1Uniform = glGetUniformLocation(_shaderProgram, "SamplerY");
-    _tex2Uniform = glGetUniformLocation(_shaderProgram, "SamplerUV");
-    _saturationUniform = glGetUniformLocation(_shaderProgram, "saturationFactor");
+    _tex1Uniform = glGetUniformLocation(_shaderProgram, "inputImageTexture");
     
-
     // Release vertex and fragment shaders.
     if (vertShader) {
         glDetachShader(_shaderProgram, vertShader);
