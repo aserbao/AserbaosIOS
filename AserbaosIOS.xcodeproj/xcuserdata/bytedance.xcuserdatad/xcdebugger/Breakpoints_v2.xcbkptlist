@@ -180,7 +180,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "8C237AC2-AE2B-49B7-B2AC-8873594829E8 - 50c9239793385241"
+                  uuid = "8C237AC2-AE2B-49B7-B2AC-8873594829E8 - 50c92397933852cd"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -190,12 +190,12 @@
                   urlString = "file:///Users/bytedance/aserbao/alearn/IOS/AserbaosIOS/AserbaosIOS/Controllers/ASCameraViewController.m"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "54"
-                  endingLineNumber = "54"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
                   offsetFromSymbolStart = "24">
                </Location>
                <Location
-                  uuid = "8C237AC2-AE2B-49B7-B2AC-8873594829E8 - 51caf6a3f185c72a"
+                  uuid = "8C237AC2-AE2B-49B7-B2AC-8873594829E8 - 51caf6a3f185d8a6"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -205,8 +205,8 @@
                   urlString = "file:///Users/bytedance/aserbao/alearn/IOS/AserbaosIOS/AserbaosIOS/Controllers/ASCameraViewController.m"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "55"
-                  endingLineNumber = "55"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
                   offsetFromSymbolStart = "28">
                </Location>
             </Locations>
@@ -228,7 +228,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "560D0172-EC73-45C1-99B5-A330BEB2D15A - b6f4a4771f607cf5"
+                  uuid = "560D0172-EC73-45C1-99B5-A330BEB2D15A - b6f4a4771f607d71"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -238,12 +238,12 @@
                   urlString = "file:///Users/bytedance/aserbao/alearn/IOS/AserbaosIOS/AserbaosIOS/Controllers/ASCameraViewController.m"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "65"
-                  endingLineNumber = "65"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
                   offsetFromSymbolStart = "24">
                </Location>
                <Location
-                  uuid = "560D0172-EC73-45C1-99B5-A330BEB2D15A - 537417831887a59e"
+                  uuid = "560D0172-EC73-45C1-99B5-A330BEB2D15A - 537417831887a51a"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -253,9 +253,9 @@
                   urlString = "file:///Users/bytedance/aserbao/alearn/IOS/AserbaosIOS/AserbaosIOS/Controllers/ASCameraViewController.m"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "96">
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "88">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -289,6 +289,22 @@
             startingLineNumber = "306"
             endingLineNumber = "306"
             landmarkName = "-aboutCamera:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "21FA6F6A-A9EE-45F6-8383-C0B145B4378C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AserbaosIOS/Controllers/opengl/ASByteEffectsViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
+            landmarkName = "-captureOutput:didOutputSampleBuffer:fromConnection:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

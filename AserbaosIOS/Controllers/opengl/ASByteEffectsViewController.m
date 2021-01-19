@@ -161,6 +161,11 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     size_t width = CVPixelBufferGetWidth(pixelBuffer);
     size_t height = CVPixelBufferGetHeight(pixelBuffer);
     
+    CVPixelBufferLockBaseAddress(pixelBuffer, 0);
+    unsigned char* address = (unsigned char*)CVPixelBufferGetBaseAddress(pixelBuffer);
+    
+    CVPixelBufferUnlockBaseAddress(pixelBuffer, 0);
+    
     if (!_videoTextureCache)
     {
         NSLog(@"No video texture cache");
