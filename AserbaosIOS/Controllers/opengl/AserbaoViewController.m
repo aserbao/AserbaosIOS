@@ -5,7 +5,7 @@
 //  Created by aserbao on 2021/1/15.
 //
 
-#import "ASByteEffectsViewController.h"
+#import "AserbaoViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <OpenGLES/ES2/gl.h>
 #import <OpenGLES/ES2/glext.h>
@@ -37,7 +37,7 @@ static const GLfloat textureVertices[] = {
     
 };
 
-@interface ASByteEffectsViewController ()<AVCaptureVideoDataOutputSampleBufferDelegate>
+@interface AserbaoViewController ()<AVCaptureVideoDataOutputSampleBufferDelegate>
 
 @property(nonatomic,weak) GLKView *glView;
 @property(nonatomic) CGFloat retinaScaleFactor; //to keep it ok with iPhone 5/6
@@ -59,7 +59,7 @@ static const GLfloat textureVertices[] = {
 
 @end
 
-@implementation ASByteEffectsViewController
+@implementation AserbaoViewController
 
 -(void)viewDidLoad {
     
@@ -256,15 +256,11 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     //-- Create the output for the capture session.
     AVCaptureVideoDataOutput * dataOutput = [[AVCaptureVideoDataOutput alloc] init];
     [dataOutput setAlwaysDiscardsLateVideoFrames:YES]; // Probably want to set this to NO when recording
-    
-    //-- Set to YUV420.
-//    [dataOutput setVideoSettings:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt:kCVPixelFormatType_420YpCbCr8BiPlanarFullRange]
     [dataOutput setVideoSettings:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt:kCVPixelFormatType_32BGRA]
                                                              forKey:(id)kCVPixelBufferPixelFormatTypeKey]]; // Necessary for manual preview
     
     // Set dispatch to be on the main thread so OpenGL can do things with the data
     [dataOutput setSampleBufferDelegate:self queue:dispatch_get_main_queue()];
-    
     [self.session addOutput:dataOutput];
     [self.session commitConfiguration];
     
