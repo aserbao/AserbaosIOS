@@ -295,7 +295,7 @@
                                     <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="cZd-ZT-mnn" kind="show" id="PMF-BS-1uK"/>
+                                    <segue destination="cZd-ZT-mnn" kind="push" id="OuU-gs-1XS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -338,7 +338,7 @@
         <!--GLKit View Controller-->
         <scene sceneID="v2M-jD-voJ">
             <objects>
-                <glkViewController preferredFramesPerSecond="30" id="cZd-ZT-mnn" customClass="ASByteEffectsViewController" sceneMemberID="viewController">
+                <glkViewController wantsFullScreenLayout="YES" hidesBottomBarWhenPushed="YES" preferredFramesPerSecond="30" id="cZd-ZT-mnn" customClass="AserbaoViewController" sceneMemberID="viewController">
                     <glkView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" enableSetNeedsDisplay="NO" id="K8u-lf-sZy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -347,7 +347,9 @@
                             <outlet property="delegate" destination="cZd-ZT-mnn" id="evD-tF-ju3"/>
                         </connections>
                     </glkView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="kfD-st-uwr"/>
+                    <nil key="simulatedTopBarMetrics"/>
                 </glkViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BqE-Xl-yxN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

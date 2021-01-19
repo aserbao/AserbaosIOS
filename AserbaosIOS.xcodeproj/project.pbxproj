@@ -31,7 +31,7 @@
 		2B99ECB925A73AAC00951772 /* AserbaosIOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B99ECB825A73AAC00951772 /* AserbaosIOSUITests.m */; };
 		2B99ECFC25A8344400951772 /* Students.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2B99ECFB25A8344400951772 /* Students.plist */; };
 		2B99ED1725A8440900951772 /* ASTomcatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B99ED1625A8440900951772 /* ASTomcatViewController.m */; };
-		2BC341D925B68EC300948831 /* ASByteEffectsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC341D825B68EC200948831 /* ASByteEffectsViewController.m */; };
+		2BC341D925B68EC300948831 /* AserbaoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC341D825B68EC200948831 /* AserbaoViewController.m */; };
 		2BDAD89E25B1876C001ECB2A /* ASRippleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDAD89D25B1876C001ECB2A /* ASRippleViewController.m */; };
 		2BDAD8AB25B56444001ECB2A /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 2BDAD8AA25B56444001ECB2A /* Shader.fsh */; };
 		2BDAD8B325B56463001ECB2A /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 2BDAD8B225B56463001ECB2A /* Shader.vsh */; };
@@ -100,8 +100,8 @@
 		2B99ECFB25A8344400951772 /* Students.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Students.plist; sourceTree = "<group>"; };
 		2B99ED1625A8440900951772 /* ASTomcatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASTomcatViewController.m; sourceTree = "<group>"; };
 		2B99ED1F25A8445000951772 /* ASTomcatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASTomcatViewController.h; sourceTree = "<group>"; };
-		2BC341D825B68EC200948831 /* ASByteEffectsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASByteEffectsViewController.m; sourceTree = "<group>"; };
-		2BC341DD25B68ED300948831 /* ASByteEffectsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASByteEffectsViewController.h; sourceTree = "<group>"; };
+		2BC341D825B68EC200948831 /* AserbaoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AserbaoViewController.m; sourceTree = "<group>"; };
+		2BC341DD25B68ED300948831 /* AserbaoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AserbaoViewController.h; sourceTree = "<group>"; };
 		2BDAD89C25B1876C001ECB2A /* ASRippleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASRippleViewController.h; sourceTree = "<group>"; };
 		2BDAD89D25B1876C001ECB2A /* ASRippleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASRippleViewController.m; sourceTree = "<group>"; };
 		2BDAD8AA25B56444001ECB2A /* Shader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = Shader.fsh; sourceTree = "<group>"; };
@@ -260,8 +260,8 @@
 				2BDAD8A925B56419001ECB2A /* Shaders */,
 				2BDAD89C25B1876C001ECB2A /* ASRippleViewController.h */,
 				2BDAD89D25B1876C001ECB2A /* ASRippleViewController.m */,
-				2BC341DD25B68ED300948831 /* ASByteEffectsViewController.h */,
-				2BC341D825B68EC200948831 /* ASByteEffectsViewController.m */,
+				2BC341DD25B68ED300948831 /* AserbaoViewController.h */,
+				2BC341D825B68EC200948831 /* AserbaoViewController.m */,
 			);
 			path = opengl;
 			sourceTree = "<group>";
@@ -422,7 +422,7 @@
 				2B99EC9325A73AAA00951772 /* AppDelegate.m in Sources */,
 				2B49C5DE25AD8F2100AC8493 /* ASCameraViewController.m in Sources */,
 				2B76E7E325A86EE6001A1E5C /* ASStudentView.m in Sources */,
-				2BC341D925B68EC300948831 /* ASByteEffectsViewController.m in Sources */,
+				2BC341D925B68EC300948831 /* AserbaoViewController.m in Sources */,
 				2B99ECA425A73AAC00951772 /* main.m in Sources */,
 				2B76E7CC25A8653D001A1E5C /* ASStudent.m in Sources */,
 				2B49C5E425AD8F8C00AC8493 /* ASCameraPreview.m in Sources */,

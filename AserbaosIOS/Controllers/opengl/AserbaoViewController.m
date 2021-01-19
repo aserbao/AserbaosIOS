@@ -46,7 +46,7 @@ static const GLfloat textureVertices[] = {
 @property(nonatomic) GLuint shaderProgram;
 
 @property(nonatomic) GLint tex1Uniform;
-@property(nonatomic) GLint saturationUniform;
+
 
 //opnegl
 @property (strong, nonatomic) EAGLContext *context;
@@ -55,7 +55,7 @@ static const GLfloat textureVertices[] = {
 @property (nonatomic) CVOpenGLESTextureRef lumaTexture;
 @property (nonatomic) CVOpenGLESTextureCacheRef videoTextureCache;
 @property (nonatomic, strong) AVCaptureSession *session;
-@property (nonatomic, strong) NSString *sessionPreset;
+
 
 @end
 
@@ -64,28 +64,25 @@ static const GLfloat textureVertices[] = {
 -(void)viewDidLoad {
     
     [super viewDidLoad];
-    
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    // 创建EAGLContext
     self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
-    
     if (!self.context) {
         NSLog(@"Failed to create ES context");
     }
     
     //create Opengl view we are processing view update on demand so pause the view
     self.glView = (GLKView *)self.view;
+    // set EAGLContext to glkView
     self.glView.context = self.context;
-    self.glView.drawableDepthFormat = GLKViewDrawableDepthFormat24;
-    self.preferredFramesPerSecond = 60;
     
+    // set the delegate
     self.glView.delegate = self;
-    
-    self.view.backgroundColor = [UIColor whiteColor];
     
     self.retinaScaleFactor = [[UIScreen mainScreen] nativeScale];
     
-    self.view.contentScaleFactor = self.retinaScaleFactor;
+//    self.view.contentScaleFactor = self.retinaScaleFactor;
     
-    _sessionPreset = AVCaptureSessionPreset1280x720;
     
     [self setupGL];
     [self setupAVCapture];
@@ -97,11 +94,6 @@ static const GLfloat textureVertices[] = {
     [self.session stopRunning];
 }
 
-- (void)setSaturation:(CGFloat)saturation
-{
-    //clamp to 0.0-1.0
-    _saturation = fmaxf(0.0, fminf(1.0, saturation));
-}
 
 - (void)setupGL
 {
@@ -187,7 +179,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
                                                        GL_RGBA,
                                                        (int)width,
                                                        (int)height,
-                                                       GL_RGBA,
+                                                       GL_BGRA,
                                                        GL_UNSIGNED_BYTE,
                                                        0,
                                                        &_lumaTexture);
@@ -224,7 +216,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     [self.session beginConfiguration];
     
     //-- Set preset session size.
-    [self.session setSessionPreset:_sessionPreset];
+    [self.session setSessionPreset:AVCaptureSessionPreset1280x720];
     
     //-- Creata a video device and input from that Device.  Add the input to the capture session.
     NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];

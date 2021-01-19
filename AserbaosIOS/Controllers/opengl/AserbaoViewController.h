@@ -10,7 +10,6 @@
 #import <AVFoundation/AVFoundation.h>
 
 @interface AserbaoViewController : GLKViewController<AVCaptureVideoDataOutputSampleBufferDelegate>
-@property(nonatomic) CGFloat saturation;
 @end
 
 
