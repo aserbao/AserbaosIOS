@@ -298,6 +298,18 @@
                                     <segue destination="cZd-ZT-mnn" kind="push" id="OuU-gs-1XS"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A0e-fS-LJz">
+                                <rect key="frame" x="218" y="732" width="130" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="GLKit Demo">
+                                    <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="showGLKitDemo" destination="BYZ-38-t0r" eventType="touchUpInside" id="XMM-bP-VDo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemPinkColor"/>
@@ -333,7 +345,7 @@
                 </glkViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bAa-D3-Rdl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1532" y="-343"/>
+            <point key="canvasLocation" x="1499" y="-615"/>
         </scene>
         <!--GLKit View Controller-->
         <scene sceneID="v2M-jD-voJ">
@@ -353,7 +365,7 @@
                 </glkViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BqE-Xl-yxN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1532" y="364"/>
+            <point key="canvasLocation" x="1499" y="0.0"/>
         </scene>
     </scenes>
     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

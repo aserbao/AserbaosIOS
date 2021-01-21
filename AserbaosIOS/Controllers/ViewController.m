@@ -7,6 +7,7 @@
 
 #import "ViewController.h"
 #import "ASCameraViewController.h"
+#import "ASGLKitViewController.h"
 
 @interface ViewController ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 - (IBAction)calc;
@@ -25,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *leftTableView;
 - (IBAction)testFunc;
 - (IBAction)aboutCamera:(UIButton *)sender;
+- (IBAction)showGLKitDemo;
 
 
 @property (nonatomic, strong) NSTimer *timer;
@@ -329,6 +331,13 @@
     [person inputName:@"aserbao"];
     [person inputAge:18];
     NSLog(@"%@",person.info);
+}
+
+
+/// 显示GLKit 的案例
+- (IBAction)showGLKitDemo {
+    ASGLKitViewController *asGlkitView = [[ASGLKitViewController alloc]init];
+    [self.navigationController pushViewController:asGlkitView animated:YES];
 }
 
 

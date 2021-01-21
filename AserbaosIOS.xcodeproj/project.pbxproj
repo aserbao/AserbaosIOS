@@ -185,8 +185,6 @@
 				2B99ED1F25A8445000951772 /* ASTomcatViewController.h */,
 				2B99EC9825A73AAA00951772 /* ViewController.m */,
 				2B49C5DC25AD8F2100AC8493 /* ASCameraViewController.h */,
-				2B49C64225B04E7000AC8493 /* ASGLKitViewController.h */,
-				2B49C64325B04E7000AC8493 /* ASGLKitViewController.m */,
 				2B49C5DD25AD8F2100AC8493 /* ASCameraViewController.m */,
 				2B49C60625AEA1BF00AC8493 /* ASVideoViewController.h */,
 				2B49C60725AEA1BF00AC8493 /* ASVideoViewController.m */,
@@ -257,6 +255,7 @@
 		2BDAD89B25B1874A001ECB2A /* opengl */ = {
 			isa = PBXGroup;
 			children = (
+				2BED997525B7C795003F9C0B /* GLKit tutorial */,
 				2BDAD8A925B56419001ECB2A /* Shaders */,
 				2BDAD89C25B1876C001ECB2A /* ASRippleViewController.h */,
 				2BDAD89D25B1876C001ECB2A /* ASRippleViewController.m */,
@@ -270,11 +269,20 @@
 			isa = PBXGroup;
 			children = (
 				2BDAD8AA25B56444001ECB2A /* Shader.fsh */,
-				2B2A4FC025B6D0A800A662E3 /* Bytedance.fsh */,
 				2BDAD8B225B56463001ECB2A /* Shader.vsh */,
+				2B2A4FC025B6D0A800A662E3 /* Bytedance.fsh */,
 				2B2A4FC525B6D0B400A662E3 /* Bytedance.vsh */,
 			);
 			name = Shaders;
+			sourceTree = "<group>";
+		};
+		2BED997525B7C795003F9C0B /* GLKit tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				2B49C64225B04E7000AC8493 /* ASGLKitViewController.h */,
+				2B49C64325B04E7000AC8493 /* ASGLKitViewController.m */,
+			);
+			name = "GLKit tutorial";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

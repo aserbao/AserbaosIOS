@@ -9,6 +9,36 @@
 #import <AVFoundation/AVFoundation.h>
 #import <OpenGLES/ES2/gl.h>
 #import <OpenGLES/ES2/glext.h>
+
+#define TTF_STRINGIZE(x) #x
+#define TTF_STRINGIZE2(x) TTF_STRINGIZE(x)
+#define TTF_SHADER_STRING(text) @ TTF_STRINGIZE2(text)
+static NSString *const CAMREA_VERTEX = TTF_SHADER_STRING
+(
+ attribute vec4 position;
+ attribute vec2 texCoord;
+
+ varying vec2 textureCoordinate;
+
+ void main()
+ {
+     gl_Position = position;
+     textureCoordinate = texCoord;
+ }
+);
+//const char * shaderStringUTF8 = [CAMREA_RESIZE_VERTEX UTF8String];
+static NSString *const CAMREA_FRAGMENT = TTF_SHADER_STRING
+(
+ precision mediump float;
+ varying highp vec2 textureCoordinate;
+ uniform sampler2D inputImageTexture;
+ void main()
+ {
+ //    gl_FragColor = texture2D(inputImageTexture, textureCoordinate).bgra;
+     gl_FragColor = texture2D(inputImageTexture, textureCoordinate);
+ }
+);
+
 // Attribute index.
 enum
 {
@@ -28,13 +58,7 @@ static const GLfloat textureVertices[] = {
     1.0f, 0.0f,
     0.0f, 0.0f,
     1.0f, 1.0f,
-    0.0f, 1.0f,
-
-  
-//    0.0f, 0.0f,
-//    0.0f, 1.0f,
-    
-    
+    0.0f, 1.0f, 
 };
 
 @interface AserbaoViewController ()<AVCaptureVideoDataOutputSampleBufferDelegate>
@@ -295,21 +319,21 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 - (BOOL)loadShaders
 {
     GLuint vertShader, fragShader;
-    NSString *vertShaderPathname, *fragShaderPathname;
+//    NSString *vertShaderPathname, *fragShaderPathname;
     
     // Create shader program.
     _shaderProgram = glCreateProgram();
     
     // Create and compile vertex shader.
-    vertShaderPathname = [[NSBundle mainBundle] pathForResource:@"Bytedance" ofType:@"vsh"];
-    if (![self compileShader:&vertShader type:GL_VERTEX_SHADER file:vertShaderPathname]) {
+//    vertShaderPathname = [[NSBundle mainBundle] pathForResource:@"Bytedance" ofType:@"vsh"];
+    if (![self compileShader:&vertShader type:GL_VERTEX_SHADER file:CAMREA_VERTEX]) {
         NSLog(@"Failed to compile vertex shader");
         return NO;
     }
     
     // Create and compile fragment shader.
-    fragShaderPathname = [[NSBundle mainBundle] pathForResource:@"Bytedance" ofType:@"fsh"];
-    if (![self compileShader:&fragShader type:GL_FRAGMENT_SHADER file:fragShaderPathname]) {
+//    fragShaderPathname = [[NSBundle mainBundle] pathForResource:@"Bytedance" ofType:@"fsh"];
+    if (![self compileShader:&fragShader type:GL_FRAGMENT_SHADER file:CAMREA_FRAGMENT]) {
         NSLog(@"Failed to compile fragment shader");
         return NO;
     }
@@ -363,14 +387,10 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 
 - (BOOL)compileShader:(GLuint *)shader
                  type:(GLenum)type
-                 file:(NSString *)file
+                 file:(NSString *)shaderString
 {
     GLint status;
-    const GLchar *source;
-    
-    source = (GLchar *)[[NSString stringWithContentsOfFile:file
-                                                  encoding:NSUTF8StringEncoding
-                                                     error:nil] UTF8String];
+    const GLchar *source = [shaderString UTF8String];
     if (!source) {
         
         NSLog(@"Failed to load vertex shader");
